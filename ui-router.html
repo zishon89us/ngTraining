@@ -1,0 +1,62 @@
+<html>
+<head lang="en">    <meta charset="UTF-8">     <title></title> </head>
+<body ng-app="debuggingRouting">
+<div> Hey! ui-router</div>
+<nav>
+    <ul>
+        <li><a href="#!/fruits">Fruits</a></li>
+        <li><a href="#!/vegetables">Vegetables</a></li>
+        <li><a href="#!/grocery">Grocery</a></li>
+        <li><a href="#!/other">Other</a></li>
+    </ul>
+</nav>
+<header>  Header </header>
+<div ng-view></div>
+<footer> Footer</footer>
+
+<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+<script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
+<script type="text/javascript" src="app.js"></script>
+<script type="text/javascript">
+    var app = angular.module("debuggingRouting", ["ui.router"]);
+    app.config(function ($stateProvider, $locationProvider) {
+        $routeProvider
+                .when('/fruits', {
+                    templateUrl: "views/fruits.html",
+                    controller: "fruitsCtrl"
+                })
+                .when('/vegetables', {
+                    templateUrl: "views/vegetables.html",
+                    controller: "vegetablesCtrl"
+                })
+                .when('/grocery', {
+                    templateUrl: "views/grocery.html",
+                    controller: "groceryCtrl"
+                });
+        $routeProvider.otherwise({
+            redirectTo:"/"
+        });
+        $locationProvider.hashPrefix("!");
+    });
+    app.controller("fruitsCtrl", function ($scope) {
+        $scope.title = "Fruits";
+
+        $scope.$on('$destroy', function () {
+            console.log("fruit destroy");
+        });
+        setInterval(function () {
+            console.log($scope);
+            console.log($scope.title);
+        },1000);
+    });
+    app.controller("vegetablesCtrl", function ($scope) {
+        $scope.title = "Vegetables";
+    });
+    app.controller("groceryCtrl", function ($scope) {
+        $scope.title = "Grocery";
+    });
+
+</script>
+
+</body>
+</html>

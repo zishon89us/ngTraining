@@ -4,50 +4,47 @@
 <div> Hey! ui-router</div>
 <nav>
     <ul>
-        <li><a href="#!/fruits">Fruits</a></li>
-        <li><a href="#!/vegetables">Vegetables</a></li>
-        <li><a href="#!/grocery">Grocery</a></li>
+        <li><a ui-sref="fruits">Fruits</a></li>
+        <li><a ui-sref="vegetables">Vegetables</a></li>
+        <li><a ui-sref="grocery">Grocery</a></li>
         <li><a href="#!/other">Other</a></li>
     </ul>
 </nav>
 <header>  Header </header>
-<div ng-view></div>
+<div ui-view></div>
 <footer> Footer</footer>
 
 <script type="text/javascript" src="bower_components/angular/angular.js"></script>
-<script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
-<script type="text/javascript" src="app.js"></script>
+<script type="text/javascript" src="bower_components/ui-router/release/angular-ui-router.js"></script>
 <script type="text/javascript">
     var app = angular.module("debuggingRouting", ["ui.router"]);
-    app.config(function ($stateProvider, $locationProvider) {
-        $routeProvider
-                .when('/fruits', {
+    app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
+        $stateProvider
+                .state('fruits', {
+                    url:"/fruits",
                     templateUrl: "views/fruits.html",
                     controller: "fruitsCtrl"
                 })
-                .when('/vegetables', {
+                .state('vegetables', {
+                    url:"/vegetables",
                     templateUrl: "views/vegetables.html",
                     controller: "vegetablesCtrl"
                 })
-                .when('/grocery', {
+                .state('grocery', {
+                    url:"/grocery",
                     templateUrl: "views/grocery.html",
                     controller: "groceryCtrl"
                 });
-        $routeProvider.otherwise({
-            redirectTo:"/"
-        });
+
+        $urlRouterProvider.otherwise("/");
         $locationProvider.hashPrefix("!");
     });
     app.controller("fruitsCtrl", function ($scope) {
         $scope.title = "Fruits";
-
-        $scope.$on('$destroy', function () {
-            console.log("fruit destroy");
+        var destroyFn = $scope.$on('$destroy', function () {
+            destroyFn();
+            $scope = undefined;
         });
-        setInterval(function () {
-            console.log($scope);
-            console.log($scope.title);
-        },1000);
     });
     app.controller("vegetablesCtrl", function ($scope) {
         $scope.title = "Vegetables";

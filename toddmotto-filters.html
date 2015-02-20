@@ -1,0 +1,46 @@
+<html>
+<head lang="en">    <meta charset="UTF-8">     <title></title> </head>
+<body ng-app="filter" ng-controller="filterCtrl as filter">
+<div> Hey! Filters</div>
+<div>
+    Date <hr/>
+    {{ 1400956671914 | date: 'dd-MM-yyyy' }} <br/>
+    UpperCase
+    <hr/>
+    <div ng-repeat="friend in filter.friends">
+        {{friend.name | makeUppercase}}
+    </div>
+
+
+</div>
+<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+<script type="text/javascript">
+
+    var app = angular.module("filter", []);
+
+    app.filter('makeUppercase', function () {
+        return function (item) {
+            return item.toUpperCase();
+        };
+    });
+
+    app.controller("filterCtrl", function ($scope) {
+
+        this.friends = [{
+            name: 'Shan'
+        }, {
+            name: 'Zeeshan'
+        }, {
+            name: 'Alishan'
+        }, {
+            name: 'Alisha'
+        }, {
+            name: 'shaan'
+        }];
+
+    });
+
+</script>
+
+</body>
+</html>

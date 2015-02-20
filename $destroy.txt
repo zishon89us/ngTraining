@@ -1,0 +1,14 @@
+x = $scope.$on('$detroy', function(){});
+
+$scope.$$listeners = {
+$destroy : [function(){}, function(){}];
+};
+
+
+retrun function(){
+ namedListeners[1] = null;
+// $scope.$$listeners.$destroy[1] = null;
+}
+
+
+

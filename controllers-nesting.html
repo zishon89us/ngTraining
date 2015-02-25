@@ -1,0 +1,59 @@
+<html>
+<head lang="en">    <meta charset="UTF-8">     <title></title> </head>
+<body ng-app="debuggingRouting">
+<div> Hey! ui-router</div>
+<nav>
+    <ul>
+        <li><a ui-sref="fruits">Fruits</a></li>
+        <li><a ui-sref="vegetables">Vegetables</a></li>
+        <li><a ui-sref="grocery">Grocery</a></li>
+        <li><a href="#!/other">Other</a></li>
+    </ul>
+</nav>
+<header>  Header </header>
+<div ui-view></div>
+<footer> Footer</footer>
+
+<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+<script type="text/javascript" src="bower_components/ui-router/release/angular-ui-router.js"></script>
+<script type="text/javascript">
+    var app = angular.module("debuggingRouting", ["ui.router"]);
+    app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
+        $stateProvider
+                .state('fruits', {
+                    url:"/fruits",
+                    templateUrl: "views/fruits.html",
+                    controller: "fruitsCtrl"
+                })
+                .state('vegetables', {
+                    url:"/vegetables",
+                    templateUrl: "views/vegetables.html",
+                    controller: "vegetablesCtrl"
+                })
+                .state('grocery', {
+                    url:"/grocery",
+                    templateUrl: "views/grocery.html",
+                    controller: "groceryCtrl"
+                });
+
+        $urlRouterProvider.otherwise("/");
+        $locationProvider.hashPrefix("!");
+    });
+    app.controller("fruitsCtrl", function ($scope) {
+        $scope.title = "Fruits";
+        var destroyFn = $scope.$on('$destroy', function () {
+            destroyFn();
+            $scope = undefined;
+        });
+    });
+    app.controller("vegetablesCtrl", function ($scope) {
+        $scope.title = "Vegetables";
+    });
+    app.controller("groceryCtrl", function ($scope) {
+        $scope.title = "Grocery";
+    });
+
+</script>
+
+</body>
+</html>

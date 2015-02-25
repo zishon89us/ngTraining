@@ -1,0 +1,44 @@
+<html>
+<head lang="en">    <meta charset="UTF-8">     <title></title> </head>
+<body ng-app="controllerNesting">
+<div> Hey! $event</div>
+
+<div ng-controller="parentCtrl">
+    <p>parent</p>
+    <hr/>
+    <div ng-controller="child1Ctrl">
+        <p>child1</p>
+        <input ng-model="someObj.x" ng-change="emitNow()">
+        <button >Emit now</button>
+    </div>
+    <hr/>
+</div>
+
+<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+<script type="text/javascript">
+
+    var app = angular.module("controllerNesting", []);
+
+    app.controller("parentCtrl", function ( $rootScope, $scope ) {
+        $rootScope.$on('dinner', function(evt, data){
+            console.log('yes i heard that. : ', data);
+        });
+    });
+    app.controller("child1Ctrl", function ( $rootScope, $scope ) {
+
+        $scope.someObj = {
+            x: 'xoxo'
+        };
+        $scope.emitNow = function () {
+
+            $rootScope.$emit('dinner', $scope.someObj);
+        };
+    });
+    app.controller("child2Ctrl", function ($scope) {
+    });
+
+
+</script>
+
+</body>
+</html>

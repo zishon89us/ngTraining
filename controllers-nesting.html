@@ -1,57 +1,44 @@
 <html>
 <head lang="en">    <meta charset="UTF-8">     <title></title> </head>
-<body ng-app="debuggingRouting">
-<div> Hey! ui-router</div>
-<nav>
-    <ul>
-        <li><a ui-sref="fruits">Fruits</a></li>
-        <li><a ui-sref="vegetables">Vegetables</a></li>
-        <li><a ui-sref="grocery">Grocery</a></li>
-        <li><a href="#!/other">Other</a></li>
-    </ul>
-</nav>
-<header>  Header </header>
-<div ui-view></div>
-<footer> Footer</footer>
+<body ng-app="controllerNesting">
+<div> Hey! Controllers</div>
+
+<div ng-controller="controllerLevelA">
+    {{title}}
+    <div ng-controller="controllerLevel2A">{{title}} <====> {{titleNest}}</div>
+    <div ng-controller="controllerLevel2B">{{title}} <====> {{titleNest}}</div>
+</div>
+
+<div ng-controller="controllerLevelB">
+    {{title}}
+    <div ng-controller="controllerLevel2C">{{title}} <====> {{titleNest}}</div>
+    <div ng-controller="controllerLevel2D">{{title}} <====> {{titleNest}}</div>
+</div>
 
 <script type="text/javascript" src="bower_components/angular/angular.js"></script>
-<script type="text/javascript" src="bower_components/ui-router/release/angular-ui-router.js"></script>
 <script type="text/javascript">
-    var app = angular.module("debuggingRouting", ["ui.router"]);
-    app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
-        $stateProvider
-                .state('fruits', {
-                    url:"/fruits",
-                    templateUrl: "views/fruits.html",
-                    controller: "fruitsCtrl"
-                })
-                .state('vegetables', {
-                    url:"/vegetables",
-                    templateUrl: "views/vegetables.html",
-                    controller: "vegetablesCtrl"
-                })
-                .state('grocery', {
-                    url:"/grocery",
-                    templateUrl: "views/grocery.html",
-                    controller: "groceryCtrl"
-                });
 
-        $urlRouterProvider.otherwise("/");
-        $locationProvider.hashPrefix("!");
+    var app = angular.module("controllerNesting", []);
+
+    app.controller("controllerLevelA", function ($scope) {
+        $scope.title = "Title from Controller Level-1 A ";
     });
-    app.controller("fruitsCtrl", function ($scope) {
-        $scope.title = "Fruits";
-        var destroyFn = $scope.$on('$destroy', function () {
-            destroyFn();
-            $scope = undefined;
-        });
+    app.controller("controllerLevelB", function ($scope) {
+        $scope.title = "Title from Controller Level-1 B ";
     });
-    app.controller("vegetablesCtrl", function ($scope) {
-        $scope.title = "Vegetables";
+    app.controller("controllerLevel2A", function ($scope) {
+        $scope.titleNest = "Title from Controller Level-2 A ";
     });
-    app.controller("groceryCtrl", function ($scope) {
-        $scope.title = "Grocery";
+    app.controller("controllerLevel2B", function ($scope) {
+        $scope.titleNest = "Title from Controller Level-2 B ";
     });
+    app.controller("controllerLevel2C", function ($scope) {
+        $scope.titleNest = "Title from Controller Level-2 C ";
+    });
+    app.controller("controllerLevel2D", function ($scope) {
+        $scope.titleNest = "Title from Controller Level-2 D ";
+    });
+
 
 </script>
 

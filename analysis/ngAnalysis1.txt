@@ -1,0 +1,29 @@
+step1
+
+first walkthrough
+C + V
+C + V
+C + V
+
+second walkthrough
+third walkthrough
+
+Problem: duplicate loading of functions of controller and prev alives forever.
+
+Step2
+add a $scope.$on('$destroy', function(){
+//release your scope and listeners.
+});
+
+Problem: duplication loading still exists, but prev destorys.
+
+Step3
+C + F + V
+C + F + V
+C + F + V
+
+problem: 
+No duplicate loading and no prev objects.
+more pages visited means more functions cached/alive at a time.
+solution:
+creation of function doesnt require as much memory as live functions do.

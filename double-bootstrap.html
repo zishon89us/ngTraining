@@ -1,0 +1,46 @@
+<html>
+<head lang="en">    <meta charset="UTF-8">     <title></title> </head>
+<body >
+<div> Hey! Double Bootstrap</div>
+
+<div ng-controller="app1Ctrl">
+    <p>App1</p>
+    {{someVal}}
+    <div ng-controller="app1Ctrl">{{someVal}}</div>
+</div>
+
+<!--<div ng-app="bootStrap2" ng-controller="app2Ctrl">-->
+    <!--<p>App2</p>-->
+    <!--{{someVal}}-->
+<!--</div>-->
+
+<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+<script type="text/javascript">
+
+    var app1 = angular.module("bootStrap1", []);
+    var app2 = angular.module("bootStrap2", []);
+    var app3 = angular.module("bootStrap3", []);
+
+    app1.service("testService", function ( $rootScope ) {
+        console.log('X');
+        return {x: null};
+    });
+    app2.service("testService", function ( $rootScope ) {
+        console.log('Y');
+        return {x: null};
+    });
+    app3.controller("app1Ctrl", function ( $rootScope, $scope, testService) {
+        $rootScope.someVal = 'FromApp1';
+        console.log('m3 vtrl');
+    });
+    app1.controller("app1Ctrl", function ( $rootScope, $scope, testService) {
+        $rootScope.someVal = 'FromApp1';
+        console.log('m1 vtrl');
+    });
+
+    angular.bootstrap(document,["bootStrap1", "bootStrap2","bootStrap3"]);
+
+</script>
+
+</body>
+</html>

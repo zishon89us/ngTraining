@@ -1,0 +1,17 @@
+prerequisite:
+
+add a $scope.$on('$destroy', function(){
+//release your scope and listeners.
+});
+
+step1
+
+C + V
+
+conc: speed compromised over memory
+
+step2
+
+C + F + V
+
+conc: memory compromised over speed

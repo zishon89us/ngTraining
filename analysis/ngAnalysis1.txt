@@ -27,3 +27,4 @@ No duplicate loading and no prev objects.
 more pages visited means more functions cached/alive at a time.
 solution:
 creation of function doesnt require as much memory as live functions do.
+

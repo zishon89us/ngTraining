@@ -3,11 +3,20 @@
 <body ng-app="updateJSON">
 <div> Hey! JSON</div>
 <div ng-controller="firstCtrl">
+    <!-- approach 1 -->
     <table>
         <tr ng-click="change(item)" ng-repeat="item in prices">
             <td>{{item.Code}}</td> <td>{{item.Selected}}</td>
         </tr>
     </table>
+
+    <!-- approach 2 -->
+    <table>
+        <tr ng-click="item.Selected = !item.Selected" ng-repeat="item in prices">
+            <td>{{item.Code}}</td> <td>{{item.Selected}}</td>
+        </tr>
+    </table>
+
 </div>
 <script type="text/javascript" src="bower_components/angular/angular.js"></script>
 <script type="text/javascript">

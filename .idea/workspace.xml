@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="907fc937-8e10-4482-bebd-f381edcd763a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/update-json.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/update-json.html" afterPath="$PROJECT_DIR$/update-json.html" />
     </list>
     <ignored path="ngTraining.git.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -70,8 +69,8 @@
       <file leaf-file-name="update-json.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/update-json.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.21326165" vertical-offset="0" max-vertical-offset="748">
-              <caret line="7" column="54" selection-start-line="7" selection-start-column="54" selection-end-line="7" selection-end-column="54" />
+            <state vertical-scroll-proportion="0.3655914" vertical-offset="0" max-vertical-offset="901">
+              <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -540,8 +539,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/update-json.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21326165" vertical-offset="0" max-vertical-offset="748">
-          <caret line="7" column="54" selection-start-line="7" selection-start-column="54" selection-end-line="7" selection-end-column="54" />
+        <state vertical-scroll-proportion="0.3655914" vertical-offset="0" max-vertical-offset="901">
+          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
           <folding />
         </state>
       </provider>

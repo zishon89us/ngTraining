@@ -1,0 +1,39 @@
+<html>
+<head lang="en">    <meta charset="UTF-8">     <title></title> </head>
+<body ng-app="updateJSON">
+<div> Hey! JSON</div>
+<div ng-controller="firstCtrl">
+    <table>
+        <tr ng-click="change(item)" ng-repeat="item in prices">
+            <td>{{item.Code}}</td> <td>{{item.Selected}}</td>
+        </tr>
+    </table>
+</div>
+<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+<script type="text/javascript">
+
+    console.log('hey baby');
+
+    angular.module("updateJSON", [])
+            .controller("firstCtrl", function ($scope) {
+                $scope.prices = [
+                    {
+                        "Code": "code1",
+                        "Selected": false
+                    },
+                    {
+                        "Code": "code2",
+                        "Selected": false
+                    }
+                ];
+
+                $scope.change = function (item) {
+                    item.Selected = !item.Selected;
+                };
+
+            });
+
+</script>
+
+</body>
+</html>

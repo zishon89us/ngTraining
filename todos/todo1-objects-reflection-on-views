@@ -1,0 +1,8 @@
+create 2 ctrls with views
+
+ctrl1 contains count of cart items
+ctrl2 increments and decrements cart items
+
+analyze ?
+1 would count reflect on view ctrl1, w/o binding events
+2 would $scope.$watch fulfill the requirement (explicitly change scope property)

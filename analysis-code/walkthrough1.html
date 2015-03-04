@@ -1,0 +1,79 @@
+<html>
+<head lang="en">    <meta charset="UTF-8">     <title></title> </head>
+<body ng-app="debuggingControllers">
+<div> Hey! Walk-through 1</div>
+<nav>
+    <ul>
+        <li><a ui-sref="fruits">Fruits</a></li>
+        <li><a ui-sref="vegetables">Vegetables</a></li>
+        <li><a ui-sref="grocery">Grocery</a></li>
+        <li><a href="#/other">Other</a></li>
+    </ul>
+</nav>
+<header>  Header </header>
+<div ui-view></div>
+<footer> Footer</footer>
+
+<script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+<script type="text/javascript" src="../bower_components/ui-router/release/angular-ui-router.js"></script>
+<script type="text/javascript">
+    var app = angular.module("debuggingControllers", ["ui.router"]);
+    app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
+        $stateProvider
+                .state('fruits', {
+                    url:"/fruits",
+                    templateUrl: "../views/fruits.html",
+                    controller: "fruitsCtrl"
+                })
+                .state('vegetables', {
+                    url:"/vegetables",
+                    templateUrl: "../views/vegetables.html",
+                    controller: "vegetablesCtrl"
+                })
+                .state('grocery', {
+                    url:"/grocery",
+                    templateUrl: "../views/grocery.html",
+                    controller: "groceryCtrl"
+                });
+
+        $urlRouterProvider.otherwise("/");
+        $locationProvider.hashPrefix("!");
+    });
+    app.controller("fruitsCtrl", function ($scope, $rootScope, $timeout) {
+        $scope.title = "Fruits";
+        if(!$rootScope.count)
+            $rootScope.count = 0;
+        /*$timeout(function() {
+            console.log("controller 1 @ " + ++$rootScope.count);
+        }, 0);*/
+
+        $scope.$on('$destroy', function () {
+            var localInstanceCount = ++$rootScope.count
+            setInterval(function () {
+                console.log("fruitsCtrl instance # " + localInstanceCount);
+            }, 3000);
+        });
+    });
+    app.controller("vegetablesCtrl", function ($scope, $rootScope, $timeout) {
+        $scope.title = "Vegetables";
+        $scope.$on('$destroy', function () {
+            var localInstanceCount = ++$rootScope.count
+            setInterval(function () {
+                console.log("vegetableCtrl instance # " + localInstanceCount);
+            }, 3000);
+        });
+    });
+    app.controller("groceryCtrl", function ($scope, $rootScope, $timeout) {
+        $scope.title = "Grocery";
+        $scope.$on('$destroy', function () {
+            var localInstanceCount = ++$rootScope.count
+            setInterval(function () {
+                console.log("grocery instance # " + localInstanceCount);
+            }, 3000);
+        });
+    });
+
+</script>
+
+</body>
+</html>

@@ -35,7 +35,7 @@
             console.log('heard from child1. : ', data);
         });
         $scope.emitNow = function () {
-            $rootScope.$emit('dinner', $scope.title);
+            $scope.$emit('dinner', $scope.title);
         };
     });
 
@@ -44,7 +44,7 @@
             console.log('heard from child2. : ', data);
         });
         $scope.emitNow = function () {
-            $rootScope.$emit('dinner', $scope.title2);
+            $scope.$emit('dinner', $scope.title2);
         };
     });
 

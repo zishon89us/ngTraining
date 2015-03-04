@@ -1,0 +1,62 @@
+<html>
+<head lang="en">    <meta charset="UTF-8">     <title></title> </head>
+<body ng-app="controllerNesting">
+<div> Hey! $event</div>
+
+<div ng-controller="parentCtrl">
+    <p>parent</p>
+    <input ng-model="title">
+    <button ng-click="broadcastNow()" >Broadcast now</button>
+    <hr/>
+    <div ng-controller="child1Ctrl">
+        <p>child1</p>
+        <input ng-model="title2">
+        <button ng-click="broadcastNow()" >Broadcast now</button>
+        <div ng-controller="child2Ctrl">
+            <p>child2</p>
+        </div>
+    </div>
+    <hr/>
+</div>
+
+<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+<script type="text/javascript">
+
+    var app = angular.module("controllerNesting", []);
+    app.run(function($rootScope){
+            $rootScope.parentPropery = 'Parent Property';
+    });
+    app.controller("parentCtrl", function ( $rootScope, $scope ) {
+        /*$scope.name = "Parent";*/
+        $scope.broadcastNow = function () {
+            $scope.$broadcast('dinner', $scope.title);
+        };
+        $scope.$on('dinner', function(evt, data){
+            console.log('broadcast heard from parent. : ', data);
+        });
+    });
+    app.controller("child1Ctrl", function ( $rootScope, $scope ) {
+        /*$scope.name = "Parent2";
+        $rootScope.parentPropery = 'Parent Propery 2';*/
+        $scope.broadcastNow = function () {
+            $scope.$broadcast('dinner', $scope.title2);
+        };
+        $scope.$on('dinner', function(evt, data){
+            console.log('broadcast heard from child1. : ', data);
+        });
+    });
+    app.controller("child2Ctrl", function ($rootScope, $scope) {
+        $scope.$on('dinner', function(evt, data){
+            console.log('broadcast heard from child2. : ', data);
+        });
+        /* $parent vs  $root */
+        /*console.log($scope.$parent.name);
+        console.log($scope.$parent.$parent.name);
+        console.log($scope.$root.parentPropery);
+        console.log($rootScope.parentPropery);*/
+        /* $parent vs  $root */
+    });
+</script>
+
+</body>
+</html>

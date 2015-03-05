@@ -1,0 +1,25 @@
+Custom Directive
+
+app.directive('myDirective', callback);
+
+<div data-my-directive></div>
+<div data-my:directive></div>
+<div data-my_directive></div>
+<div x-my-directive></div>
+<div my-directive></div>
+
+<div></div>
+<!--my-directive-->
+<div></div>
+
+<div class="my-directive"></div>
+<my-directive></my-directive>
+
+<div id="solangi bishni"></div> ??
+
+<div some-directive>
+  <div id="solangi"></div>
+</div>
+<div another-directive>
+  <div id="solangi"></div>
+</div>

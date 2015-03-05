@@ -1,0 +1,6 @@
+In some controller
+$rootScope.title = "Yahoo";
+
+In other controller
+$scope.$root.title ?
+$scope.title ?

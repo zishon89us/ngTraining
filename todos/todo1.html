@@ -1,0 +1,80 @@
+<html>
+<head lang="en">    <meta charset="UTF-8">     <title></title> </head>
+<body ng-app="sharingData">
+<div> Hey! Controller Sharing Data</div>
+
+<div>
+    <hr/>
+    <div ng-controller="fruitsCtrl">
+        <p>{{title}} Controller</p>
+        <h2>Count | {{count}}</h2>
+        <h2>Items.Count | {{items.count}}</h2>
+        <button ng-click="incCount()" >Inc Count</button>
+        <button ng-click="decCount()" >Dec Count</button>
+        <button ng-click="incItemsCount()" >Inc Items Count</button>
+        <button ng-click="decItemsCount()" >Dec Items Count</button>
+    </div>
+    <hr/>
+    <div ng-controller="vegetablesCtrl">
+        <p>{{title}} Controller</p>
+        <h2>Count | {{count}}</h2>
+        <h2>Items.Count | {{items.count}}</h2>
+        <button ng-click="incCount()" >Inc Count</button>
+        <button ng-click="decCount()" >Dec Count</button>
+        <button ng-click="incItemsCount()" >Inc Items Count</button>
+        <button ng-click="decItemsCount()" >Dec Items Count</button>
+    </div>
+</div>
+
+<script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+<script type="text/javascript" src="../bower_components/ui-router/release/angular-ui-router.js"></script>
+<script type="text/javascript">
+    var app = angular.module("sharingData", []);
+    app.value('cart',{items:{count:0}});
+    app.controller("fruitsCtrl", function ($scope, cart) {
+        $scope.title = "Fruits";
+        $scope.count = cart.items.count;
+        $scope.items = cart.items;
+        $scope.incCount = function () {
+            //case1
+            $scope.count++;
+        }
+        $scope.decCount = function () {
+            //case 1
+            $scope.count && --$scope.count;
+        }
+        $scope.incItemsCount = function () {
+            //case 2
+            $scope.items.count++;
+        }
+        $scope.decItemsCount = function () {
+            //case 2
+            $scope.items.count && --$scope.items.count;
+        }
+    });
+    app.controller("vegetablesCtrl", function ($scope, cart) {
+        $scope.title = "Vegetables";
+        $scope.count = cart.items.count;
+        $scope.items = cart.items;
+        $scope.incCount = function () {
+            //case1
+            $scope.count++;
+        }
+        $scope.decCount = function () {
+            //case 1
+            $scope.count && --$scope.count;
+        }
+        $scope.incItemsCount = function () {
+            //case 2
+            $scope.items.count++;
+        }
+        $scope.decItemsCount = function () {
+            //case 2
+            $scope.items.count && --$scope.items.count;
+        }
+    });
+
+</script>
+
+</body>
+</html>

@@ -1,5 +1,5 @@
 Custom Directive
-
+----------------------------------------------part 1----------------------------------------------
 app.directive('myDirective', callback);
 
 <div data-my-directive></div>
@@ -23,3 +23,31 @@ app.directive('myDirective', callback);
 <div another-directive>
   <div id="solangi"></div>
 </div>
+
+----------------------------------------------part 2----------------------------------------------
+
+.directive('myDirective',function(){
+
+return {
+	template : "<p></p>",
+	templateUrl: function(elem, attr) {
+	console.log(attr);
+// { foo: 'bar', bar: 'baz', some: 'value'}
+	}
+}
+
+})
+
+
+code link:
+http://plnkr.co/edit/jf3BUFFIQdMFkBv5YXAb?p=preview
+
+template, templateUrl, restrict, scope
+------------------
+
+<div ng-controller="Controller">
+  <div my-customer data-foo="bar" data-baz="xoxo" some="value"></div>
+</div>
+
+*************************
+ You do not currently have the ability to access scope variables from the templateUrl function, since the template is requested before the scope is initialized.

@@ -1,0 +1,187 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'g-',
+1 verbose cli   'gulp' ]
+2 info using npm@1.4.3
+3 info using node@v0.10.26
+4 verbose node symlink C:\Program Files\nodejs\\node.exe
+5 verbose cache add [ 'g-', null ]
+6 verbose cache add name=undefined spec="g-" args=["g-",null]
+7 verbose parsed url { protocol: null,
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: null,
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: null,
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: 'g-',
+7 verbose parsed url   path: 'g-',
+7 verbose parsed url   href: 'g-' }
+8 verbose cache add [ 'gulp', null ]
+9 verbose cache add name=undefined spec="gulp" args=["gulp",null]
+10 verbose parsed url { protocol: null,
+10 verbose parsed url   slashes: null,
+10 verbose parsed url   auth: null,
+10 verbose parsed url   host: null,
+10 verbose parsed url   port: null,
+10 verbose parsed url   hostname: null,
+10 verbose parsed url   hash: null,
+10 verbose parsed url   search: null,
+10 verbose parsed url   query: null,
+10 verbose parsed url   pathname: 'gulp',
+10 verbose parsed url   path: 'gulp',
+10 verbose parsed url   href: 'gulp' }
+11 silly lockFile e3db23dd-g g-
+12 verbose lock g- C:\Users\Zeeshan\AppData\Roaming\npm-cache\e3db23dd-g.lock
+13 silly lockFile 9750c68d-gulp gulp
+14 verbose lock gulp C:\Users\Zeeshan\AppData\Roaming\npm-cache\9750c68d-gulp.lock
+15 silly lockFile e3db23dd-g g-
+16 silly lockFile e3db23dd-g g-
+17 silly lockFile 9750c68d-gulp gulp
+18 silly lockFile 9750c68d-gulp gulp
+19 verbose addNamed [ 'g-', '' ]
+20 verbose addNamed [ null, '*' ]
+21 silly lockFile 5c84bb4e-g g-@
+22 verbose lock g-@ C:\Users\Zeeshan\AppData\Roaming\npm-cache\5c84bb4e-g.lock
+23 verbose addNamed [ 'gulp', '' ]
+24 verbose addNamed [ null, '*' ]
+25 silly lockFile 72f4391e-gulp gulp@
+26 verbose lock gulp@ C:\Users\Zeeshan\AppData\Roaming\npm-cache\72f4391e-gulp.lock
+27 silly addNameRange { name: 'g-', range: '*', hasData: false }
+28 verbose url raw g-
+29 verbose url resolving [ 'https://registry.npmjs.org/', './g-' ]
+30 verbose url resolved https://registry.npmjs.org/g-
+31 info trying registry request attempt 1 at 20:05:10
+32 http GET https://registry.npmjs.org/g-
+33 silly addNameRange { name: 'gulp', range: '*', hasData: false }
+34 verbose url raw gulp
+35 verbose url resolving [ 'https://registry.npmjs.org/', './gulp' ]
+36 verbose url resolved https://registry.npmjs.org/gulp
+37 info trying registry request attempt 1 at 20:05:10
+38 http GET https://registry.npmjs.org/gulp
+39 http 200 https://registry.npmjs.org/gulp
+40 silly registry.get cb [ 200,
+40 silly registry.get   { date: 'Mon, 09 Mar 2015 15:05:19 GMT',
+40 silly registry.get     server: 'CouchDB/1.6.1 (Erlang OTP/R14B04)',
+40 silly registry.get     etag: '"JNNYN3XHQENL4A9HRA9D0458"',
+40 silly registry.get     'content-type': 'application/json',
+40 silly registry.get     'cache-control': 'max-age=60',
+40 silly registry.get     'content-length': '100390',
+40 silly registry.get     'accept-ranges': 'bytes',
+40 silly registry.get     via: '1.1 varnish',
+40 silly registry.get     age: '9',
+40 silly registry.get     'x-served-by': 'cache-fra1248-FRA',
+40 silly registry.get     'x-cache': 'HIT',
+40 silly registry.get     'x-cache-hits': '1',
+40 silly registry.get     'x-timer': 'S1425913519.104052,VS0,VE0',
+40 silly registry.get     vary: 'Accept',
+40 silly registry.get     'keep-alive': 'timeout=10, max=50',
+40 silly registry.get     connection: 'Keep-Alive' } ]
+41 silly addNameRange number 2 { name: 'gulp', range: '*', hasData: true }
+42 silly addNameRange versions [ 'gulp',
+42 silly addNameRange   [ '0.0.1',
+42 silly addNameRange     '0.0.2',
+42 silly addNameRange     '0.0.3',
+42 silly addNameRange     '0.0.4',
+42 silly addNameRange     '0.0.5',
+42 silly addNameRange     '0.0.7',
+42 silly addNameRange     '0.0.8',
+42 silly addNameRange     '0.0.9',
+42 silly addNameRange     '0.1.0',
+42 silly addNameRange     '0.2.0',
+42 silly addNameRange     '1.0.0',
+42 silly addNameRange     '1.1.0',
+42 silly addNameRange     '1.2.0',
+42 silly addNameRange     '1.2.1',
+42 silly addNameRange     '2.0.0',
+42 silly addNameRange     '2.0.1',
+42 silly addNameRange     '2.1.0',
+42 silly addNameRange     '2.2.0',
+42 silly addNameRange     '2.3.0',
+42 silly addNameRange     '2.4.0',
+42 silly addNameRange     '2.4.1',
+42 silly addNameRange     '2.6.0',
+42 silly addNameRange     '2.6.1',
+42 silly addNameRange     '2.7.0',
+42 silly addNameRange     '3.0.0',
+42 silly addNameRange     '3.1.1',
+42 silly addNameRange     '3.1.2',
+42 silly addNameRange     '3.1.3',
+42 silly addNameRange     '3.1.4',
+42 silly addNameRange     '3.2.0',
+42 silly addNameRange     '3.2.1',
+42 silly addNameRange     '3.2.2',
+42 silly addNameRange     '3.2.3',
+42 silly addNameRange     '3.2.4',
+42 silly addNameRange     '3.2.5',
+42 silly addNameRange     '3.3.0',
+42 silly addNameRange     '3.3.1',
+42 silly addNameRange     '3.3.2',
+42 silly addNameRange     '3.3.4',
+42 silly addNameRange     '3.4.0',
+42 silly addNameRange     '3.5.0',
+42 silly addNameRange     '3.5.1',
+42 silly addNameRange     '3.5.2',
+42 silly addNameRange     '3.5.5',
+42 silly addNameRange     '3.5.6',
+42 silly addNameRange     '3.6.0',
+42 silly addNameRange     '3.6.1',
+42 silly addNameRange     '3.6.2',
+42 silly addNameRange     '3.7.0',
+42 silly addNameRange     '3.8.0',
+42 silly addNameRange     '3.8.1',
+42 silly addNameRange     '3.8.2',
+42 silly addNameRange     '3.8.3',
+42 silly addNameRange     '3.8.4',
+42 silly addNameRange     '3.8.5',
+42 silly addNameRange     '3.8.6',
+42 silly addNameRange     '3.8.7',
+42 silly addNameRange     '3.8.8',
+42 silly addNameRange     '3.8.9',
+42 silly addNameRange     '3.8.10',
+42 silly addNameRange     '3.8.11' ] ]
+43 verbose addNamed [ 'gulp', '3.8.11' ]
+44 verbose addNamed [ '3.8.11', '3.8.11' ]
+45 silly lockFile 3d31ec08-gulp-3-8-11 gulp@3.8.11
+46 verbose lock gulp@3.8.11 C:\Users\Zeeshan\AppData\Roaming\npm-cache\3d31ec08-gulp-3-8-11.lock
+47 silly lockFile 2528ddbe-y-npmjs-org-gulp-gulp-3-8-11-tgz https://registry.npmjs.org/gulp/-/gulp-3.8.11.tgz
+48 verbose lock https://registry.npmjs.org/gulp/-/gulp-3.8.11.tgz C:\Users\Zeeshan\AppData\Roaming\npm-cache\2528ddbe-y-npmjs-org-gulp-gulp-3-8-11-tgz.lock
+49 verbose addRemoteTarball [ 'https://registry.npmjs.org/gulp/-/gulp-3.8.11.tgz',
+49 verbose addRemoteTarball   'd557e0a7283eb4136491969b0497767972f1d28a' ]
+50 info retry fetch attempt 1 at 20:05:11
+51 verbose fetch to= C:\Users\Zeeshan\AppData\Local\Temp\npm-6524-flhofMGF\1425913511751-0.8823416100349277\tmp.tgz
+52 http GET https://registry.npmjs.org/gulp/-/gulp-3.8.11.tgz
+53 http 404 https://registry.npmjs.org/g-
+54 silly registry.get cb [ 404,
+54 silly registry.get   { date: 'Mon, 09 Mar 2015 15:05:19 GMT',
+54 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+54 silly registry.get     'content-type': 'application/json',
+54 silly registry.get     'cache-control': 'max-age=0',
+54 silly registry.get     'content-length': '52',
+54 silly registry.get     'accept-ranges': 'bytes',
+54 silly registry.get     via: '1.1 varnish',
+54 silly registry.get     age: '0',
+54 silly registry.get     'x-served-by': 'cache-fra1239-FRA',
+54 silly registry.get     'x-cache': 'MISS',
+54 silly registry.get     'x-cache-hits': '0',
+54 silly registry.get     'x-timer': 'S1425913519.108914,VS0,VE707',
+54 silly registry.get     'keep-alive': 'timeout=10, max=50',
+54 silly registry.get     connection: 'Keep-Alive' } ]
+55 silly lockFile 5c84bb4e-g g-@
+56 silly lockFile 5c84bb4e-g g-@
+57 error 404 'g-' is not in the npm registry.
+57 error 404 You should bug the author to publish it
+57 error 404
+57 error 404 Note that you can also install from a
+57 error 404 tarball, folder, or http url, or git url.
+58 error System Windows_NT 6.2.9200
+59 error command "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "g-" "gulp"
+60 error cwd E:\Sample Projects\ngTraining\ngTraining.git
+61 error node -v v0.10.26
+62 error npm -v 1.4.3
+63 error code E404
+64 verbose exit [ 1, true ]

@@ -1,0 +1,4 @@
+folder1/anyDepth
+folder2/anyDepth
+
+provide min, also when new added

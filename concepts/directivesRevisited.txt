@@ -1,0 +1,37 @@
+.run(function(){})
+
+.config(function($stateProvider, $locationProvider){
+$stateProvider.state('user',{
+	templateUrl:'user.html',
+         abstract:true,
+	controller:"userCtrl as user",
+        resolve:{
+		kob:function(sessionService){
+              return sessionService.isauthenticated
+}
+
+  $stateProvider.state('user.alerts',{
+	templateUrl:'user.html',
+
+	controller:"userCtrl as user",
+        resolve:{
+		kob:function(sessionService){
+              return sessionService.isauthenticated
+}
+}
+
+
+//ControlleAs
+	controller:"userCtrl",
+        controlleAs: "user"
+})
+
+
+  $locationProvider.hashprefix("!");
+});
+
+<div>
+ <div ng-controller="someCtrl">
+  <p> {{title}} </p>
+ </div>
+</div>

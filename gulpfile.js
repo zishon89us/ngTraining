@@ -7,12 +7,13 @@ var minifiycss = require('gulp-minify-css');
 var autoprefixer = require('gulp-autoprefixer');
 var notify = require('gulp-notify');
 var sass = require('gulp-ruby-sass');
+var concat = require('gulp-concat');
 
 //css minification
 gulp.task('css', function () {
     return gulp.src('css/main.css')
         .pipe(minifiycss())
-        .pipe(autoprefixer('last 5 version'))
+        .pipe(autoprefixer('last 15 version'))
         .pipe(gulp.dest('css/min'))
         .pipe(notify({message:"CSS Minified."}));
 });
@@ -22,6 +23,13 @@ gulp.task('css2', function () {
         .pipe(autoprefixer('last 5 version'))
         .pipe(gulp.dest('css'))
         .pipe(notify({message:"SASS Done"}));
+});
+
+//concat files
+gulp.task('task1', function () {
+    return gulp.src(['folder1/**/*.js','folder2/**/*.js'])
+        .pipe(concat('all.js'))
+        .pipe(gulp.dest('dist'));
 });
 
 gulp.task('task2', function () {

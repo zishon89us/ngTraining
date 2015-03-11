@@ -3,7 +3,7 @@
  */
 
 
-var variableOne = "This is one";
+var variableTwo = "This is two";
 
 function funcTwo(a,b){
     return a - b;

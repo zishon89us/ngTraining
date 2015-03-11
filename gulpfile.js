@@ -8,6 +8,7 @@ var autoprefixer = require('gulp-autoprefixer');
 var notify = require('gulp-notify');
 var sass = require('gulp-ruby-sass');
 var concat = require('gulp-concat');
+var uglify = require('gulp-uglify');
 
 //css minification
 gulp.task('css', function () {
@@ -29,6 +30,7 @@ gulp.task('css2', function () {
 gulp.task('task1', function () {
     return gulp.src(['folder1/**/*.js','folder2/**/*.js'])
         .pipe(concat('all.js'))
+        .pipe(uglify())
         .pipe(gulp.dest('dist'));
 });
 

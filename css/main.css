@@ -6,4 +6,5 @@ body {
 div {
     font-size: medium;
     color: azure;
+    background: linear-gradient(top, #000,#fff);
 }

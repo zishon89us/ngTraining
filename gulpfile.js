@@ -4,11 +4,13 @@
 
 var gulp = require('gulp');
 var minifiycss = require('gulp-minify-css');
+var autoprefixer = require('gulp-autoprefixer');
 
 
 gulp.task('css', function () {
     return gulp.src('css/main.css')
         .pipe(minifiycss())
+        .pipe(autoprefixer())
         .pipe(gulp.dest('css/min'));
 });
 

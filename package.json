@@ -1,0 +1,24 @@
+{
+  "name": "ngTraining",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "gulp": "^3.8.11",
+    "gulp-minify-css": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zishon89us/ngTraining.git"
+  },
+  "author": "Zeeshan Hassan Memon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zishon89us/ngTraining/issues"
+  },
+  "homepage": "https://github.com/zishon89us/ngTraining"
+}

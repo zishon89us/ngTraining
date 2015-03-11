@@ -17,6 +17,10 @@ gulp.task('task2', function () {
 });
 
 gulp.task('default', function () {
-    console.log("YEs");
+    gulp.run('css');
+    
+    gulp.watch('css/*.css', function () {
+       gulp.run('css');
+    });
 
 });

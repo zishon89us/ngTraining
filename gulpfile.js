@@ -6,10 +6,17 @@ var gulp = require('gulp');
 var minifiycss = require('gulp-minify-css');
 
 
-gulp.task('task1',function(){console.log("task1");});
-gulp.task('task2',function(){console.log("task2");});
+gulp.task('css', function () {
+    return gulp.src('css/main.css')
+        .pipe(minifiycss())
+        .pipe(gulp.dest('css/min'));
+});
 
-gulp.task('default',function(){
+gulp.task('task2', function () {
+    console.log("task2");
+});
+
+gulp.task('default', function () {
     console.log("YEs");
 
 });

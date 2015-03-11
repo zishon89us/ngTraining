@@ -1,0 +1,28 @@
+<html>
+<head lang="en">    <meta charset="UTF-8">     <title></title> </head>
+<body >
+<div> Hey! Directives</div>
+
+<div ng-app="app" ng-controller="appCtrl">
+<div ng-repeat="skin in skins">{{skin.type}} <div add-template type="skin"></div></div>
+</div>
+<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+<script type="text/javascript">
+
+    var app = angular.module("app", []);
+    app.controller("appCtrl", function ( $rootScope, $scope) {
+        $scope.skins = [{type:"lion"},{type:"fox"},{type:"tiger"}]
+    });
+    app.directive('addTemplate',function(){
+       return{
+           templateUrl: function (elem, attr) {
+               console.log("attr :: " + attr.type);
+               return 'templates/' + attr.type + '.html';
+           }
+       } 
+    });
+ 
+</script>
+
+</body>
+</html>

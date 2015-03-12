@@ -38,12 +38,19 @@ gulp.task('dist:js', function () {
 
 
 var inject = require('gulp-inject');
+//sequence
 gulp.task('inject', ['inject:js'], function () {
 
     console.log('This is task inject');
-    notify({message:"All Injection Done"});
+    return notify({message:"All Injection Done"});
 });
-gulp.task('inject:js', ['inject:css'], function () {
+//concurrent
+gulp.task('injectp', ['inject:js', 'inject:css'], function () {
+
+    console.log('This is task inject');
+    return notify({message:"All Injection Done"});
+});
+gulp.task('inject:js', function () { //['inject:css'],
     console.log('This is task inject:js');
     // It's not necessary to read the files (will speed up things), we're only after their paths:
     return gulp.src('./gulp-inject/index.html')

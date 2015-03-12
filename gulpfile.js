@@ -27,15 +27,36 @@ gulp.task('css2', function () {
 });
 
 //concat files
-gulp.task('task1', function () {
-    return gulp.src(['folder1/**/*.js','folder2/**/*.js'])
+gulp.task('dist:js', function () {
+    //return gulp.src(['folder1/**/*.js','folder2/**/*.js'])
+    return gulp.src('{folder1,folder2}/**/*.js')
         .pipe(concat('all.js'))
         .pipe(uglify())
-        .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest('dist'))
+        .pipe(notify({message:"Dist Done"}));
 });
 
-gulp.task('task2', function () {
-    console.log("task2");
+
+var inject = require('gulp-inject');
+gulp.task('inject', ['inject:js', 'inject:css'], function () {
+
+    console.log('This is task inject');
+    notify({message:"All Injection Done"});
+});
+gulp.task('inject:js', function () {
+    console.log('This is task inject:js');
+    // It's not necessary to read the files (will speed up things), we're only after their paths:
+    return gulp.src('./gulp-inject/index.html')
+        .pipe(inject( gulp.src('./{gulp-inject/folder1,gulp-inject/folder2}/**/*.js', { read: false })))
+        .pipe(gulp.dest('./gulp-inject'))
+        .pipe(notify({message:"JS Injection Done"}));
+});
+gulp.task('inject:css', ['inject:js'] ,function () {
+    console.log('This is task inject:css');
+    return gulp.src('./gulp-inject/index.html')
+        .pipe(inject( gulp.src('./{gulp-inject/folder1,gulp-inject/folder2}/**/*.css', { read: false })))
+        .pipe(gulp.dest('./gulp-inject'))
+        .pipe(notify({message:"CSS Injection Done"}));
 });
 
 gulp.task('default', function () {

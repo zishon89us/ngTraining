@@ -38,12 +38,12 @@ gulp.task('dist:js', function () {
 
 
 var inject = require('gulp-inject');
-gulp.task('inject', ['inject:js', 'inject:css'], function () {
+gulp.task('inject', ['inject:js'], function () {
 
     console.log('This is task inject');
     notify({message:"All Injection Done"});
 });
-gulp.task('inject:js', function () {
+gulp.task('inject:js', ['inject:css'], function () {
     console.log('This is task inject:js');
     // It's not necessary to read the files (will speed up things), we're only after their paths:
     return gulp.src('./gulp-inject/index.html')
@@ -51,10 +51,10 @@ gulp.task('inject:js', function () {
         .pipe(gulp.dest('./gulp-inject'))
         .pipe(notify({message:"JS Injection Done"}));
 });
-gulp.task('inject:css', ['inject:js'] ,function () {
+gulp.task('inject:css', function () {
     console.log('This is task inject:css');
     return gulp.src('./gulp-inject/index.html')
-        .pipe(inject( gulp.src('./{gulp-inject/folder1,gulp-inject/folder2}/**/*.css', { read: false })))
+        .pipe(inject( gulp.src('./gulp-inject/folder3/**/*.css', { read: false })))
         .pipe(gulp.dest('./gulp-inject'))
         .pipe(notify({message:"CSS Injection Done"}));
 });

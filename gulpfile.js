@@ -37,6 +37,7 @@ gulp.task('dist:js', function () {
 });
 
 
+
 var inject = require('gulp-inject');
 //sequence
 gulp.task('inject', ['inject:js'], function () {
@@ -64,6 +65,18 @@ gulp.task('inject:css', function () {
         .pipe(inject( gulp.src('./gulp-inject/folder3/**/*.css', { read: false })))
         .pipe(gulp.dest('./gulp-inject'))
         .pipe(notify({message:"CSS Injection Done"}));
+
+var copy = require('gulp-copy');
+
+gulp.task('copy', function() {
+    return gulp.src('test-src/**')
+        .pipe(gulp.dest('test-target/services'));
+    //pipe(notify({message:"update-hybrid-services done :)"}));
+
+});
+
+gulp.task('task2', function () {
+    console.log("task2");
 });
 
 gulp.task('default', function () {

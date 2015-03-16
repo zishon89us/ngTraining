@@ -40,7 +40,98 @@
                     item.Selected = !item.Selected;
                 };
 
-            });
+            })
+            .factory('APIMethodService', [function() {
+                var Head = "api.verifyvalid";
+                return {
+                    apis: [
+                        {
+                            accounts: [
+                                {
+                                    parameters : [
+                                        {
+                                            name : "Account",
+                                            version : "1.0"
+                                        }
+                                    ],
+                                    uri: Head + "/v1/accounts/account_number",
+                                    methods : [
+                                        {
+                                            name: "Account Number",
+                                            desc: "Returns the account number."
+                                        }, {
+                                            name: "Account Money",
+                                            desc: "Returns the monetary amount within the account."
+                                        }
+                                    ]
+                                },
+                                {
+                                    parameters : [
+                                        {
+                                            name : "Account",
+                                            version : "2.0"
+                                        }
+                                    ],
+                                    uri: Head + "/v2/accounts/account_number",
+                                    methods: [
+                                        {
+                                            name: "Account Number",
+                                            desc: "Returns the account number."
+                                        }, {
+                                            name: "Account Money",
+                                            desc: "Returns the monetary amount within the account."
+                                        }, {
+                                            name: "Account Token",
+                                            desc: "Returns the account's token."
+                                        }
+                                    ]
+                                }
+                            ],
+                            customers:[
+                                {
+                                    parameters : [
+                                        {
+                                            name : "Customers",
+                                            version : "1.0"
+                                        }
+                                    ],
+                                    uri: Head + "/v1/customers/customer_number",
+                                    methods : [
+                                        {
+                                            name: "Customer Name",
+                                            desc: "Returns the customer's name."
+                                        }, {
+                                            name: "Customer ID",
+                                            desc: "Returns the customer's ID."
+                                        }
+                                    ]
+                                },
+                                {
+                                    parameters : [
+                                        {
+                                            name : "Customers",
+                                            version : "2.0"
+                                        }
+                                    ],
+                                    uri : Head + "/v2/customers/customer_number",
+                                    methods: [
+                                        {
+                                            name: "Customer Name",
+                                            desc: "Returns the customer's name."
+                                        }, {
+                                            name: "Customer ID",
+                                            desc: "Returns the customer's ID."
+                                        }, {
+                                            name: "Customer Email",
+                                            desc: "Returns the customer's email."
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                };
+            }]);
 
 </script>
 

@@ -75,8 +75,13 @@ gulp.task('copy', function() {
 
 });
 
-gulp.task('task2', function () {
-    console.log("task2");
+var watchLess = require('gulp-watch-less');
+
+gulp.task('css3', function () {
+    return gulp.src('less/style.less')
+        .pipe(watchLess('less/style.less'))
+        .pipe(less())
+        .pipe(gulp.dest('css'));
 });
 
 gulp.task('default', function () {

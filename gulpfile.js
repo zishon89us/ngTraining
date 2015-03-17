@@ -62,9 +62,10 @@ gulp.task('inject:js', function () { //['inject:css'],
 gulp.task('inject:css', function () {
     console.log('This is task inject:css');
     return gulp.src('./gulp-inject/index.html')
-        .pipe(inject( gulp.src('./gulp-inject/folder3/**/*.css', { read: false })))
+        .pipe(inject(gulp.src('./gulp-inject/folder3/**/*.css', {read: false})))
         .pipe(gulp.dest('./gulp-inject'))
-        .pipe(notify({message:"CSS Injection Done"}));
+        .pipe(notify({message: "CSS Injection Done"}));
+});
 
 var copy = require('gulp-copy');
 
@@ -75,6 +76,7 @@ gulp.task('copy', function() {
 
 });
 
+var less = require('gulp-less');
 var watchLess = require('gulp-watch-less');
 
 gulp.task('css3', function () {

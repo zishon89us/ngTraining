@@ -86,6 +86,21 @@ gulp.task('css3', function () {
         .pipe(gulp.dest('css'));
 });
 
+
+
+var Q = require('q');
+
+gulp.task('promise', function() {
+    var deferred = Q.defer();
+
+    // do async stuff
+    setTimeout(function() {
+        deferred.resolve();
+    }, 1);
+
+    return deferred.promise;
+});
+
 gulp.task('default', function () {
     gulp.run('css2');
     

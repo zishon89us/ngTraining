@@ -4,15 +4,23 @@
 <div> Hey! ng-repeat</div>
 <div>
 
+    <!--normal array-->
     <div ng-repeat="friend in Ctrl.friendsArray">
         {{friend.name}}
     </div>
 
     <hr>
+    <!--normal object-->
     <div ng-repeat="(key, category) in Ctrl.creatureObject">
         {{key}} | {{category}}
     </div>
 
+    <hr>
+    <!--normal array with track by-->
+    <!--This tells AngularJS that each friend is uniquely identified by the friend.name value, and to reuse DOM elements as long as the name field does not change.-->
+    <div ng-repeat="friend in Ctrl.friendsArray track by friend.name">
+        {{friend.name}}
+    </div>
 
 </div>
 <script type="text/javascript" src="bower_components/angular/angular.js"></script>

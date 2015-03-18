@@ -1,0 +1,48 @@
+<html>
+<head lang="en">    <meta charset="UTF-8">     <title></title> </head>
+<body ng-app="app" ng-controller="Ctrl as Ctrl">
+<div> Hey! ng-repeat</div>
+<div>
+
+    <div ng-repeat="friend in Ctrl.friendsArray">
+        {{friend.name}}
+    </div>
+
+    <hr>
+    <div ng-repeat="(key, category) in Ctrl.creatureObject">
+        {{key}} | {{category}}
+    </div>
+
+
+</div>
+<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+<script type="text/javascript">
+
+    angular.module("app", [])
+            .controller("Ctrl", function ($scope) {
+
+        this.friendsArray = [{
+            name: 'Shan'
+        }, {
+            name: 'Zeeshan'
+        }, {
+            name: 'Alishan'
+        }, {
+            name: 'Alisha'
+        }, {
+            name: 'shaan'
+        }];
+
+        this.creatureObject =  {
+            lion:'Animal',
+            fox:"Animal",
+            snake:"Reptile",
+            crow:"Bird"
+        };
+
+    });
+
+</script>
+
+</body>
+</html>

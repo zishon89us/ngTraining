@@ -1,0 +1,46 @@
+<html>
+<head lang="en">    <meta charset="UTF-8">     <title></title> </head>
+<body ng-app="filter" ng-controller="filterCtrl as filter">
+<div> Hey! Filters</div>
+<div>
+    <div ng-app="filterApp">
+        <div ng-controller="FilterCtrl as ctrl">
+            <input type="text" ng-model="ctrl.searchFieldModel"/>
+            <button ng-click="ctrl.filter()">Filter Stocks</button>
+
+            <div ng-repeat="stock in ctrl.stocks | filter: ctrl.searchField">
+                {{stock.name}}
+            </div>
+
+            <div ng-repeat="stock in ctrl.filteredStocks">
+                Pre Filtered {{stock.name}}
+            </div>
+        </div>
+    </div>
+
+</div>
+<script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+<script type="text/javascript">
+
+    angular.module('filterApp', [])
+            .controller('FilterCtrl', ['filterFilter', function(filterFilter) {
+                var self = this;
+                self.stocks = [
+                    {id: 1, name: 'Google Inc'},
+                    {id: 2, name: 'Twitter Inc'},
+                    {id: 3, name: 'Facebook Inc'},
+                ];
+                self.filteredStocks = angular.copy(self.stocks);
+                self.searchFieldModel = '';
+                self.searchField = '';
+
+                self.filter = function() {
+                    self.searchField = self.searchFieldModel;
+                    self.filteredStocks = filterFilter(self.stocks, self.searchField);
+                };
+            }]);
+
+</script>
+
+</body>
+</html>

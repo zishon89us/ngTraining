@@ -2,6 +2,11 @@
 <head lang="en">    <meta charset="UTF-8">     <title></title> </head>
 <body ng-app="filter" ng-controller="filterCtrl as filter">
 <div> Hey! Filters</div>
+<!--Any AngularJS filter can be injected into your controller, service or directive by adding the keyword Filter
+at the end of the name of the filter, and then specifying that in the dependency injection syntax. The JSFiddle
+below shows an example of performing the filter both in your HTML as well as in your controller.-->
+
+<!-- Functionally, both are the same, but underneath, the filter in the controller approach is just a bit faster and more performant. -->
 <div>
     <div ng-app="filterApp">
         <div ng-controller="FilterCtrl as ctrl">

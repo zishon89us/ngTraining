@@ -2,9 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="907fc937-8e10-4482-bebd-f381edcd763a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/filters/controller-filters.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="D:\Client Projects\ngTraining\toddmotto-filters.html" afterPath="$PROJECT_DIR$/filters/toddmotto-filters.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular/angular.min.js.gzip" afterPath="$PROJECT_DIR$/bower_components/angular/angular.min.js.gzip" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angularjs/angular.min.js.gzip" afterPath="$PROJECT_DIR$/bower_components/angularjs/angular.min.js.gzip" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular/.bower.json" afterPath="$PROJECT_DIR$/bower_components/angular/.bower.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular-route/.bower.json" afterPath="$PROJECT_DIR$/bower_components/angular-route/.bower.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angularjs/.bower.json" afterPath="$PROJECT_DIR$/bower_components/angularjs/.bower.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular/README.md" afterPath="$PROJECT_DIR$/bower_components/angular/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular-route/README.md" afterPath="$PROJECT_DIR$/bower_components/angular-route/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angularjs/README.md" afterPath="$PROJECT_DIR$/bower_components/angularjs/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular/angular-csp.css" afterPath="$PROJECT_DIR$/bower_components/angular/angular-csp.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angularjs/angular-csp.css" afterPath="$PROJECT_DIR$/bower_components/angularjs/angular-csp.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular-route/angular-route.js" afterPath="$PROJECT_DIR$/bower_components/angular-route/angular-route.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular-route/angular-route.min.js.map" afterPath="$PROJECT_DIR$/bower_components/angular-route/angular-route.min.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular-route/angular-route.min.js" afterPath="$PROJECT_DIR$/bower_components/angular-route/angular-route.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular/angular.js" afterPath="$PROJECT_DIR$/bower_components/angular/angular.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angularjs/angular.js" afterPath="$PROJECT_DIR$/bower_components/angularjs/angular.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular/angular.min.js.map" afterPath="$PROJECT_DIR$/bower_components/angular/angular.min.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angularjs/angular.min.js.map" afterPath="$PROJECT_DIR$/bower_components/angularjs/angular.min.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular/angular.min.js" afterPath="$PROJECT_DIR$/bower_components/angular/angular.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angularjs/angular.min.js" afterPath="$PROJECT_DIR$/bower_components/angularjs/angular.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular/bower.json" afterPath="$PROJECT_DIR$/bower_components/angular/bower.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular-route/bower.json" afterPath="$PROJECT_DIR$/bower_components/angular-route/bower.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angularjs/bower.json" afterPath="$PROJECT_DIR$/bower_components/angularjs/bower.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular/package.json" afterPath="$PROJECT_DIR$/bower_components/angular/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular-route/package.json" afterPath="$PROJECT_DIR$/bower_components/angular-route/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angularjs/package.json" afterPath="$PROJECT_DIR$/bower_components/angularjs/package.json" />
     </list>
     <ignored path="ngTraining.git.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -189,6 +211,7 @@
         <option value="$PROJECT_DIR$/ng-repeat.html" />
         <option value="$PROJECT_DIR$/filters/toddmotto-filters.html" />
         <option value="$PROJECT_DIR$/filters/controller-filters.html" />
+        <option value="$PROJECT_DIR$/bower_components/angular/bower.json" />
       </list>
     </option>
   </component>
@@ -428,7 +451,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="1" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />

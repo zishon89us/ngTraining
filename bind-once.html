@@ -1,0 +1,56 @@
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title></head>
+<body ng-app="app" ng-controller="Ctrl as Ctrl">
+<div> Hey! BindOnce</div>
+<!--
+AngularJS 1.3 introduces a concept of lazy single binding, which is used to just get data out to the UI once at the beginning.
+After that, AngularJS stops watching the variable and updating it in the UI. It is useful for data that you don’t expect to
+change once displayed to the user. This was inspired by bindonce, a third party module which introduced this concept.
+-->
+<div>
+    <hr/>
+    BindOnce so won't add push here
+    <hr/>
+
+    <!--bidnonce array-->
+    <div ng-repeat="friend in ::Ctrl.friendsArray">
+        {{::friend.name}}
+    </div>
+
+    <hr/>
+    Normal Binding so will push here
+    <hr/>
+    <!--normal array-->
+    <div ng-repeat="friend in Ctrl.friendsArray">
+        {{friend.name}}
+    </div>
+    <hr/>
+    <hr/>
+    <button ng-click="Ctrl.friendsArray.push({name:'NewName'})">Push</button>
+</div>
+<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+<script type="text/javascript">
+
+    angular.module("app", [])
+            .controller("Ctrl", function ($scope) {
+
+                this.friendsArray = [{
+                    name: 'Shan'
+                }, {
+                    name: 'Zeeshan'
+                }, {
+                    name: 'Alishan'
+                }, {
+                    name: 'Alisha'
+                }, {
+                    name: 'shaan'
+                }];
+
+            });
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,5 @@
+App 1.0
+
+Create 4 pages Login,Sign-up, Home and Contacts. Create Header H and Footer F and attach H and F with HOme and contacts pages. Show Login and Sign-up pages full screen.
+
+Note: Header and Footer is created once only. Also clean scopes on routing.

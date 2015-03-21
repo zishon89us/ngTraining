@@ -1,1 +1,11 @@
-header
+<div>
+    <p>
+        <b>This is Header Static Part</b>
+    </p>
+    <p ng-if="user">
+        Welcome! {{user.username}} | Your are LoggedIn
+    </p>
+    <p ng-if="!user">
+        <a ui-sref="login">Login Please</a>
+    </p>
+</div>

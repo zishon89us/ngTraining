@@ -25,7 +25,12 @@
                     views: {
 
                         // the main template will be placed here (relatively named)
-                        '': { templateUrl: 'views/fruits.html' },
+                        '': {
+                            templateUrl: 'views/fruits.html',
+                            controller: function($scope){
+                                $scope.title = 'MAIN FRUITS!!'
+                            }
+                        },
 
                         // the child views will be defined here (absolutely named)
                         'fresh@fruits': { template: 'Hey! I am fresh fruit template.' },

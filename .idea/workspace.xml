@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="907fc937-8e10-4482-bebd-f381edcd763a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/fruits.html" afterPath="$PROJECT_DIR$/views/fruits.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui-router-multiple-views.html" afterPath="$PROJECT_DIR$/ui-router-multiple-views.html" />
     </list>
     <ignored path="ngTraining.git.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,20 +48,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ui-router-multiple-views.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ui-router-multiple-views.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ui-router-multiple-views.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.115385" vertical-offset="299" max-vertical-offset="1326">
-              <caret line="30" column="30" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.48729792" vertical-offset="299" max-vertical-offset="1411">
+              <caret line="30" column="56" selection-start-line="30" selection-start-column="56" selection-end-line="30" selection-end-column="56" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fruits.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="fruits.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/fruits.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.07852194" vertical-offset="0" max-vertical-offset="433">
+            <state vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="136">
               <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
               <folding />
             </state>
@@ -190,8 +190,8 @@
         <option value="$PROJECT_DIR$/apps/1.0/components/header.html" />
         <option value="$PROJECT_DIR$/apps/1.0/templates/home.html" />
         <option value="$PROJECT_DIR$/apps/1.0/templates/contacts.html" />
-        <option value="$PROJECT_DIR$/ui-router-multiple-views.html" />
         <option value="$PROJECT_DIR$/views/fruits.html" />
+        <option value="$PROJECT_DIR$/ui-router-multiple-views.html" />
       </list>
     </option>
   </component>
@@ -801,6 +801,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/fruits.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="136">
+          <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/dry-fruits.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
@@ -811,16 +819,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ui-router-multiple-views.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.115385" vertical-offset="299" max-vertical-offset="1326">
-          <caret line="30" column="30" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/fruits.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07852194" vertical-offset="0" max-vertical-offset="433">
-          <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.48729792" vertical-offset="299" max-vertical-offset="1411">
+          <caret line="30" column="56" selection-start-line="30" selection-start-column="56" selection-end-line="30" selection-end-column="56" />
           <folding />
         </state>
       </provider>

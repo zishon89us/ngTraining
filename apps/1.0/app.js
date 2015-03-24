@@ -16,18 +16,28 @@ angular.module('app1.0', ['ui.router'])
                 templateUrl: 'templates/signup.html',
                 controller: 'SignUpCtrl'
             })
+            .state('pages',{
+                abstract:true,
+                templateUrl:'templates/pages.html'
+
+            })
             .state('home', {
                 url: '/home',
                 templateUrl: 'templates/home.html',
                 controller: 'HomeCtrl'
             })
-            .state('contacts', {
+            .state('pages.contacts', {
                 url: '/contacts',
                 templateUrl: 'templates/contacts.html',
                 controller: 'ContactsCtrl'
+            })
+            .state('pages.careers', {
+                url: '/careers',
+                templateUrl: 'templates/careers.html',
+                controller: 'CareersCtrl'
             });
 
-        //$urlRouterProvider.otherwise("/login");
+        $urlRouterProvider.otherwise("/login");
 
     })
     .value('userObject',{
@@ -63,6 +73,10 @@ angular.module('app1.0', ['ui.router'])
         if(userObject.username.length && userObject.password.length )
             $scope.user = userObject;
 
+    })
+    .controller('CareersCtrl', function ($scope) {
+        if(userObject.username.length && userObject.password.length )
+            $scope.user = userObject;
     })
     .directive('header', function () {
         return {

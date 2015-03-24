@@ -1,6 +1,14 @@
 <div>
     <p>
-        <b>This is Header Static Part</b>
+        <b>This is Header Static Part </b>
+        <nav>
+            <ul>
+                <li><a ui-sref="home"></a></li>
+                <li><a ui-sref="pages.contacts"></a></li>
+                <li><a ui-sref="pages.careers"></a></li>
+            </ul>
+
+        </nav>
     </p>
     <p ng-if="user">
         Welcome! {{user.username}} | Your are LoggedIn

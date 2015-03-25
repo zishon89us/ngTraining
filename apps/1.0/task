@@ -7,10 +7,10 @@ Note: Header and Footer is created once only. Also clean scopes on routing.
 
 Review
 
-prioritize $type angular injections over custome ones
-note: use hashbang in next apps
-file classification i.e. keep controllers and directive in separate folders
-prefer manual boot-strapping over ng-app (declarative)
+prioritize $type angular injections over custome ones (already done)
+note: use hashbang in next apps (done)
+file classification i.e. keep controllers and directive in separate folders (done)
+prefer manual boot-strapping over ng-app (declarative) (done)
 html5 validation: use data-*
 
 due to extra time I was supposed to integrate gulp.js basic task

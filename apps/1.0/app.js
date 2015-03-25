@@ -3,7 +3,7 @@
  */
 
 angular.module('app1.0', ['ui.router'])
-    .config(function ($stateProvider, $urlRouterProvider) {
+    .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
 
         $stateProvider
             .state('login', {
@@ -38,6 +38,8 @@ angular.module('app1.0', ['ui.router'])
             });
 
         $urlRouterProvider.otherwise("/login");
+
+        $locationProvider.hashPrefix('!');
 
     })
     .value('userObject',{

@@ -76,7 +76,7 @@ angular.module('app1.0', ['ui.router'])
             $scope.user = userObject;
 
     })
-    .controller('CareersCtrl', function ($scope) {
+    .controller('CareersCtrl', function ($scope, userObject) {
         if(userObject.username.length && userObject.password.length )
             $scope.user = userObject;
     })

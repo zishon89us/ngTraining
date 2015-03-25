@@ -3,17 +3,17 @@
         <b>This is Header Static Part </b>
         <nav>
             <ul>
-                <li><a ui-sref="home">Home</a></li>
-                <li><a ui-sref="pages.contacts">Contacts</a></li>
-                <li><a ui-sref="pages.careers">Careers</a></li>
+                <li><a data-ui-sref="home">Home</a></li>
+                <li><a data-ui-sref="pages.contacts">Contacts</a></li>
+                <li><a data-ui-sref="pages.careers">Careers</a></li>
             </ul>
 
         </nav>
     </p>
-    <p ng-if="user">
+    <p data-ng-if="user">
         Welcome! {{user.username}} | Your are LoggedIn
     </p>
-    <p ng-if="!user">
-        <a ui-sref="login">Login Please</a>
+    <p data-ng-if="!user">
+        <a data-ui-sref="login">Login Please</a>
     </p>
 </div>

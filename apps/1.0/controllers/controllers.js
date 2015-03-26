@@ -37,3 +37,7 @@ angular.module('app1.0')
         if(userObject.username.length && userObject.password.length )
             $scope.user = userObject;
     })
+    .controller('PagesCtrl', function ($scope, userObject) {
+        if(userObject.username.length && userObject.password.length )
+            $scope.user = userObject;
+    });

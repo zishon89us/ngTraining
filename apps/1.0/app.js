@@ -18,7 +18,8 @@ angular.module('app1.0', ['ui.router'])
             })
             .state('pages',{
                 abstract:true,
-                templateUrl:'templates/pages.html'
+                templateUrl:'templates/pages.html',
+                controller: 'PagesCtrl'
 
             })
             .state('home', {

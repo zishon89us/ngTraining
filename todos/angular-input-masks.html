@@ -11,10 +11,17 @@
             <input type="text" name="field" ng-model="number" ui-number-mask="3">
         </div>
         <hr/>
-        <h2>You & Me | ng-bind-html </h2>
+        <h2>Money | 2 Decimals  </h2>
+        <div>
+            <input type="text" name="field" ng-model="number" ui-money-mask>
+        </div>
         <hr/>
-        <div ng-bind-html="var1"></div>
-        <div>{{var1}}</div>
+        <h2>Phone | '3125250784' | 3125250784 </h2>
+        <div>
+            <input type="text" name="field" ng-model="phoneNumber" ui-br-phone-number>
+        </div>
+        <hr/>
+
     </div>
 
 </div>
@@ -26,6 +33,7 @@
     var app = angular.module("app", ['ui.utils.masks']);
     app.controller("appCtrl", function ($scope) {
         $scope.number = 99;
+        $scope.phoneNumber = '3125250784';
     });
     angular.bootstrap(document,['app']);
 </script>

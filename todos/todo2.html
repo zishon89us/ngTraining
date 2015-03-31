@@ -1,0 +1,31 @@
+<html>
+<head lang="en">    <meta charset="UTF-8">     <title></title> </head>
+<body>
+<div> Hey! Unescaped Values</div>
+
+<div>
+    <hr/>
+    <div ng-controller="appCtrl">
+        <h2>You & Me | {-{}-} </h2>
+        <div>{{var1}}</div>
+        <hr/>
+        <h2>You & Me | ng-bind-html </h2>
+        <hr/>
+        <div ng-bind-html="var1"></div>
+        <div>{{var1}}</div>
+    </div>
+
+</div>
+
+<script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+<script type="text/javascript">
+
+    var app = angular.module("app", []);
+    app.controller("appCtrl", function ($scope) {
+        $scope.var1 = "You & Me > Some > One";
+    });
+    angular.bootstrap(document,['app']);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<html>
+<head lang="en">    <meta charset="UTF-8">     <title></title> </head>
+<body>
+<div> Hey! Angular Input Masks</div>
+
+<div>
+    <hr/>
+    <div ng-controller="appCtrl">
+        <h2>Number | 3 Decimals  </h2>
+        <div>
+            <input type="text" name="field" ng-model="number" ui-number-mask="3">
+        </div>
+        <hr/>
+        <h2>You & Me | ng-bind-html </h2>
+        <hr/>
+        <div ng-bind-html="var1"></div>
+        <div>{{var1}}</div>
+    </div>
+
+</div>
+
+<script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+<script type="text/javascript" src="../bower_components/angular-input-masks/angular-input-masks.min.js"></script>
+<script type="text/javascript">
+
+    var app = angular.module("app", ['ui.utils.masks']);
+    app.controller("appCtrl", function ($scope) {
+        $scope.number = 99;
+    });
+    angular.bootstrap(document,['app']);
+</script>
+
+</body>
+</html>

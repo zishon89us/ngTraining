@@ -1,0 +1,36 @@
+<html>
+<head lang="en">    <meta charset="UTF-8">     <title></title> </head>
+<body ng-app="app">
+<div> Hey! Call Controller Function From jQuery</div>
+
+<div id="myctrl" ng-app='app' ng-controller="MyCtrl">
+    Call via jQuery
+    <button id="hit">Call</button>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+<script type="text/javascript">
+    angular.module('app', [])
+            .controller('MyCtrl', function ($scope) {
+                $scope.anyFunc = function (var1, var2) {
+                    alert("I am var1 = " + var1);
+                    alert("I am var2 = " + var2);
+                };
+            });
+
+    $(function(){
+
+        $("#hit").on("click",function(){
+
+            angular.element($("#myctrl")).scope().anyFunc('VAR1 VALUE', 'VAR2 VALUE');
+
+        });
+
+    });
+
+</script>
+
+</body>
+</html>

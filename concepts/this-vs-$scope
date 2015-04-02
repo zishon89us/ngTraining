@@ -1,0 +1,12 @@
+this vs $scope
+
+this
+
+When the controller constructor function is called, this is the controller.
+When a function defined on a $scope object is called, this is the "scope in effect when the function was called". This may (or may not!) be the $scope that the function is defined on. So, inside the function, this and $scope may not be the same.
+
+$scope
+
+Every controller has an associated $scope object.
+A controller (constructor) function is responsible for setting model properties and functions/behavior on its associated $scope.
+Only methods defined on this $scope object (and parent scope objects, if prototypical inheritance is in play) are accessible from the HTML/view. E.g., from ng-click, filters, etc.

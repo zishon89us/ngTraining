@@ -1,0 +1,33 @@
+<html>
+<head lang="en">    <meta charset="UTF-8">     <title></title> </head>
+<body ng-app="MyApp">
+
+<div> Hey! Filtering and Sorting a List <a href="http://fdietz.github.io/recipes-with-angular-js/common-user-interface-patterns/filtering-and-sorting-a-list.html"> | Source Link</a></div>
+
+<div ng-controller="MyCtrl">
+    <form class="form-inline">
+        <input ng-model="query" type="text"
+               placeholder="Filter by" autofocus>
+    </form>
+    <ul ng-repeat="friend in friends | filter:query | orderBy: 'name' ">
+        <li>{{friend.name}}</li>
+    </ul>
+</div>
+
+<script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+<script type="text/javascript">
+    angular.module('MyApp', [])
+            .controller("MyCtrl", function ($scope) {
+                $scope.friends = [
+                    {name: "Peter", age: 20},
+                    {name: "Pablo", age: 55},
+                    {name: "Linda", age: 20},
+                    {name: "Marta", age: 37},
+                    {name: "Othello", age: 20},
+                    {name: "Markus", age: 32}
+                ];
+            });
+</script>
+
+</body>
+</html>

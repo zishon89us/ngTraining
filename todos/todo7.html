@@ -2,35 +2,41 @@
 <head lang="en">    <meta charset="UTF-8">     <title></title> </head>
 <body ng-app="MyApp">
 
-<div> Hey! $parse vs $eval <a href="http://fdietz.github.io/recipes-with-angular-js/common-user-interface-patterns/filtering-and-sorting-a-list.html"> | Source Link</a></div>
+<div> Hey! Forms <a href="https://docs.angularjs.org/guide/forms"> | Source Link</a></div>
 
 <div ng-controller="MyCtrl">
-    <div my-attr="obj.name" my-directive>testing</div>
+    <br>
+    <hr>
+    <form novalidate class="simple-form">
+        Name: <input type="text" ng-model="user.name" /><br /><br>
+        E-mail: <input type="email" ng-model="user.email" /><br /><br>
+        Gender: <input type="radio" ng-model="user.gender" value="male" />male
+        <input type="radio" ng-model="user.gender" value="female" />female<br /><br />
+        <input type="button" ng-click="reset()" value="Reset" />
+        <input type="submit" ng-click="update(user)" value="Save" />
+    </form>
+    <br>
+    <hr>
+    <pre>form = {{user | json}}</pre>
+    <pre>master = {{master | json}}</pre>
 </div>
 
 <script type="text/javascript" src="../bower_components/angular/angular.js"></script>
 <script type="text/javascript">
     angular.module('MyApp', [])
-            .controller("MyCtrl", function ($scope) {
-                $scope.obj =   {name: "Peter"};
-            })
-            .directive('myDirective', function( $parse, $log ) {
-                return function( scope, el, attrs ) {
-                    // parse the "my-attr" attribute value into a function
-                    var model = $parse( attrs.myAttr );
-                    // "model" is now a function which can be invoked to get the expression's value;
-                    // the following line logs the value of obj.name on scope:
-                    $log.log( model(scope) );
+            .controller("MyCtrl", ['$scope', function($scope) {
+                $scope.master = {};
 
-                    el.bind('click', function() {
-                        // "model.assign" is also a function; it can be invoked to
-                        // update the expresssion value
-                        model.assign(scope, "New name");
-                        scope.$apply();
-                    })
-                }
-            });
+                $scope.update = function(user) {
+                    $scope.master = angular.copy(user);
+                };
+
+                $scope.reset = function() {
+                    $scope.user = angular.copy($scope.master);
+                };
+
+                $scope.reset();
+            }]);
 </script>
-
 </body>
 </html>

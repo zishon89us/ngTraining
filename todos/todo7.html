@@ -1,0 +1,36 @@
+<html>
+<head lang="en">    <meta charset="UTF-8">     <title></title> </head>
+<body ng-app="MyApp">
+
+<div> Hey! $parse vs $eval <a href="http://fdietz.github.io/recipes-with-angular-js/common-user-interface-patterns/filtering-and-sorting-a-list.html"> | Source Link</a></div>
+
+<div ng-controller="MyCtrl">
+    <div my-attr="obj.name" my-directive>testing</div>
+</div>
+
+<script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+<script type="text/javascript">
+    angular.module('MyApp', [])
+            .controller("MyCtrl", function ($scope) {
+                $scope.obj =   {name: "Peter"};
+            })
+            .directive('myDirective', function( $parse, $log ) {
+                return function( scope, el, attrs ) {
+                    // parse the "my-attr" attribute value into a function
+                    var model = $parse( attrs.myAttr );
+                    // "model" is now a function which can be invoked to get the expression's value;
+                    // the following line logs the value of obj.name on scope:
+                    $log.log( model(scope) );
+
+                    el.bind('click', function() {
+                        // "model.assign" is also a function; it can be invoked to
+                        // update the expresssion value
+                        model.assign(scope, "New name");
+                        scope.$apply();
+                    })
+                }
+            });
+</script>
+
+</body>
+</html>

@@ -82,10 +82,17 @@
     </div>
     <br>
     <hr>
-
+    Implementing custom form controls (using ngModel)
     <hr>
+    <div contentEditable="true" ng-model="content" title="Click to edit">Some</div>
+    <pre>model = {{content}}</pre>
 
-
+    <style type="text/css">
+        div[contentEditable] {
+            cursor: pointer;
+            background-color: #D0D0D0;
+        }
+    </style>
 
 </div>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.6/angular.min.js"></script>
@@ -114,6 +121,27 @@
             .controller("DebounceCtrl", ['$scope', function ($scope) {
                 $scope.user = {};
             }])
+            .directive('contenteditable', function () {
+                return {
+                    require: 'ngModel',
+                    link: function (scope, elm, attrs, ctrl) {
+                        // view -> model
+                        elm.on('blur', function () {
+                            scope.$apply(function () {
+                                ctrl.$setViewValue(elm.html());
+                            });
+                        });
+
+                        // model -> view
+                        ctrl.$render = function () {
+                            elm.html(ctrl.$viewValue);
+                        };
+
+                        // load init value from DOM
+                        ctrl.$setViewValue(elm.html());
+                    }
+                };
+            });
 
 </script>
 </body>

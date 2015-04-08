@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="907fc937-8e10-4482-bebd-f381edcd763a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/todos/todo8.html" afterPath="$PROJECT_DIR$/todos/todo8.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/todos/todo7.html" afterPath="$PROJECT_DIR$/todos/todo7.html" />
     </list>
     <ignored path="ngTraining.git.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -76,20 +76,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="todo7.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="todo7.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/todos/todo7.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.807693" vertical-offset="1173" max-vertical-offset="2142">
-              <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.51282054" vertical-offset="1802" max-vertical-offset="2618">
+              <caret line="126" column="62" selection-start-line="0" selection-start-column="0" selection-end-line="148" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="todo8.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="todo8.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/todos/todo8.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.7948718" vertical-offset="221" max-vertical-offset="2465">
+            <state vertical-scroll-proportion="-65.38461" vertical-offset="374" max-vertical-offset="2465">
               <caret line="122" column="33" selection-start-line="122" selection-start-column="33" selection-end-line="122" selection-end-column="33" />
               <folding />
             </state>
@@ -188,8 +188,8 @@
         <option value="$PROJECT_DIR$/concepts/this-vs-$scope" />
         <option value="$PROJECT_DIR$/todos/todo4.html" />
         <option value="$PROJECT_DIR$/todos/todo5.html" />
-        <option value="$PROJECT_DIR$/todos/todo7.html" />
         <option value="$PROJECT_DIR$/todos/todo8.html" />
+        <option value="$PROJECT_DIR$/todos/todo7.html" />
       </list>
     </option>
   </component>
@@ -791,18 +791,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/todos/todo7.html">
+    <entry file="file://$PROJECT_DIR$/todos/todo8.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.807693" vertical-offset="1173" max-vertical-offset="2142">
-          <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+        <state vertical-scroll-proportion="-65.38461" vertical-offset="374" max-vertical-offset="2465">
+          <caret line="122" column="33" selection-start-line="122" selection-start-column="33" selection-end-line="122" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/todos/todo8.html">
+    <entry file="file://$PROJECT_DIR$/todos/todo7.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.7948718" vertical-offset="221" max-vertical-offset="2465">
-          <caret line="122" column="33" selection-start-line="122" selection-start-column="33" selection-end-line="122" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.51282054" vertical-offset="1802" max-vertical-offset="2618">
+          <caret line="126" column="62" selection-start-line="0" selection-start-column="0" selection-end-line="148" selection-end-column="0" />
           <folding />
         </state>
       </provider>

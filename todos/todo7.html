@@ -57,7 +57,7 @@
     <!-- ng-model options, update on blur-->
     <br>
     <hr>
-    Update Name on Blur, Update Other data on input
+    Custom model update triggers | Update Name on Blur, Update Other data on input
     <hr>
     <div ng-controller="BlurCtrl">
         <form>
@@ -68,6 +68,16 @@
         </form>
         <pre>username = "{{user.name}}"</pre>
         <pre>userdata = "{{user.data}}"</pre>
+    </div>
+    <hr>
+    Non-immediate (debounced) model updates  I.e. ng-model-options="{ debounce: 500 }" will wait for half a second since the last content change before triggering the model update and form validation.
+    <hr>
+    <div ng-controller="DebounceCtrl">
+        <form>
+            Name:
+            <input type="text" ng-model="user.name" ng-model-options="{ debounce: 250 }" /><br />
+        </form>
+        <pre>username = "{{user.name}}"</pre>
     </div>
 
 </div>
@@ -92,6 +102,9 @@
                 $scope.reset();
             }])
             .controller("BlurCtrl", ['$scope', function ($scope) {
+                $scope.user = {};
+            }])
+            .controller("DebounceCtrl", ['$scope', function ($scope) {
                 $scope.user = {};
             }])
 

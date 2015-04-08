@@ -57,7 +57,7 @@
     <!-- ng-model options, update on blur-->
     <br>
     <hr>
-    Custom model update triggers | Update Name on Blur, Update Other data on input
+    <b> Custom model update triggers | Update Name on Blur, Update Other data on input</b>
     <hr>
     <div ng-controller="BlurCtrl">
         <form>
@@ -70,8 +70,8 @@
         <pre>userdata = "{{user.data}}"</pre>
     </div>
     <hr>
-    Non-immediate (debounced) model updates I.e. ng-model-options="{ debounce: 500 }" will wait for half a second since
-    the last content change before triggering the model update and form validation.
+    <b>Non-immediate (debounced) model updates I.e. ng-model-options="{ debounce: 500 }" will wait for half a second since
+    the last content change before triggering the model update and form validation.</b>
     <hr>
     <div ng-controller="DebounceCtrl">
         <form>
@@ -82,7 +82,7 @@
     </div>
     <br>
     <hr>
-    Implementing custom form controls (using ngModel)
+    <b>Implementing custom form controls (using ngModel)</b>
     <hr>
     <div contentEditable="true" ng-model="content" title="Click to edit">Some</div>
     <pre>model = {{content}}</pre>

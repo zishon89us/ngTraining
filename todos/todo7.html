@@ -70,15 +70,22 @@
         <pre>userdata = "{{user.data}}"</pre>
     </div>
     <hr>
-    Non-immediate (debounced) model updates  I.e. ng-model-options="{ debounce: 500 }" will wait for half a second since the last content change before triggering the model update and form validation.
+    Non-immediate (debounced) model updates I.e. ng-model-options="{ debounce: 500 }" will wait for half a second since
+    the last content change before triggering the model update and form validation.
     <hr>
     <div ng-controller="DebounceCtrl">
         <form>
             Name:
-            <input type="text" ng-model="user.name" ng-model-options="{ debounce: 250 }" /><br />
+            <input type="text" ng-model="user.name" ng-model-options="{ debounce: 250 }"/><br/>
         </form>
         <pre>username = "{{user.name}}"</pre>
     </div>
+    <br>
+    <hr>
+
+    <hr>
+
+
 
 </div>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.6/angular.min.js"></script>

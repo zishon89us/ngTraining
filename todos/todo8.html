@@ -41,12 +41,26 @@
 
     </form>
 
+    <br>
+    <hr>
+    Modifying built-in validators
+    <hr>
+    <form name="modForm" class="css-form" novalidate>
+        <div>
+            Overwritten Email:
+            <input type="email" ng-model="myEmail" overwrite-email name="overwrittenEmail" />
+            <span ng-show="modForm.overwrittenEmail.$error.email">This email format is invalid!</span><br>
+            Model: {{myEmail}}
+        </div>
+    </form>
+
 
 </div>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.6/angular.min.js"></script>
 <script type="text/javascript">
 
     var INTEGER_REGEXP = /^\-?\d+$/;
+    // directive for Custom Validation
     angular.module('MyApp', [])
             .directive('integer', function () {
                 return {
@@ -97,6 +111,25 @@
 
                             return def.promise;
                         };
+                    }
+                };
+            })
+             // directive for Modifying built-in validators
+            .directive('overwriteEmail', function() {
+                var EMAIL_REGEXP = /^[a-z0-9!#$%&'*+/=?^_`{|}~.-]+@example\.com$/i;
+
+                return {
+                    require: 'ngModel',
+                    restrict: '',
+                    link: function(scope, elm, attrs, ctrl) {
+                        // only apply the validator if ngModel is present and Angular has added the email validator
+                        if (ctrl && ctrl.$validators.email) {
+
+                            // this will overwrite the default Angular email validator
+                            ctrl.$validators.email = function(modelValue) {
+                                return ctrl.$isEmpty(modelValue) || EMAIL_REGEXP.test(modelValue);
+                            };
+                        }
                     }
                 };
             });

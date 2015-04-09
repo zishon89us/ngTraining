@@ -1,0 +1,43 @@
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css" rel="stylesheet">
+        .css-form input.ng-invalid.ng-touched {
+            background-color: #FA787E;
+        }
+
+        .css-form input.ng-valid.ng-touched {
+            background-color: #78FA89;
+        }
+    </style>
+</head>
+<body ng-app="MyApp">
+
+<div> Hey! Visibility <a href="http://learn-angular.org/#!/lessons/visibility"> | Source Link</a></div>
+
+<div>
+
+    <br>
+    <hr>
+    <div ng-controller="index">
+        <div><input type="checkbox" ng-model="isFirstElementVisible" /> Is first element visible</div>
+        <div><input type="checkbox" ng-model="isSecondElementVisible" /> Is second element visible</div>
+        <div>First Element</div>
+        <div>Second Element</div>
+    </div>
+
+</div>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.6/angular.min.js"></script>
+<script type="text/javascript">
+
+    var INTEGER_REGEXP = /^\-?\d+$/;
+    // directive for Custom Validation
+    angular.module('MyApp', [])
+            .controller("index", ["$scope", function($scope) {
+                $scope.isFirstElementVisible = true;
+                $scope.isSecondElementVisible = true;
+            }]);
+</script>
+</body>
+</html>

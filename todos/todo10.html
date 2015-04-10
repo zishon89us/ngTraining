@@ -1,0 +1,28 @@
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body ng-app="MyApp">
+
+<div> Hey! ng-resource <a href="https://docs.angularjs.org/tutorial/step_11"> | Source Link</a></div>
+
+<div>
+
+    <br>
+    <hr>
+
+</div>
+<script src="../bower_components/angular-resource/angular-resource.min.js"></script>
+<script type="text/javascript">
+
+    angular.module('MyApp', ['ngResource'])
+            .factory('Phone', ['$resource',
+                function ($resource) {
+                    return $resource('phones/:phoneId.json', {}, {
+                        query: {method: 'GET', params: {phoneId: 'phones'}, isArray: true}
+                    });
+                }]);
+</script>
+</body>
+</html>

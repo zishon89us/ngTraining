@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <title></title>
 </head>
-<body ng-app="MyApp">
+<body ng-app="MyApp" ng-controller="Ctrl as Ctrl" >
 
 <div> Hey! ngAnimate <a href="https://docs.angularjs.org/guide/animations"> | Source Link</a></div>
 
@@ -20,12 +20,19 @@
         </div>
     </div>
 
+    <br>
+    <hr>
+    <div ng-repeat="friend in Ctrl.friendsArray" class="repeated-item">
+        {{friend.name}}
+    </div>
+
 </div>
 
 <!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.6/angular.min.js"></script>-->
 <script type="text/javascript" src="../bower_components/angular/angular.js"></script>
 <script src="../bower_components/angular-animate/angular-animate.js"></script>
 <style type="text/css">
+    /*ngShow ngHide*/
     .sample-show-hide {
         padding:10px;
         border:1px solid black;
@@ -40,11 +47,87 @@
     .sample-show-hide.ng-hide {
         opacity:0;
     }
+    /*ng-repeat*/
+    /*
+  We're using CSS transitions for when
+  the enter and move events are triggered
+  for the element that has the .repeated-item
+  class
+*/
+    .repeated-item.ng-enter, .repeated-item.ng-move {
+        -webkit-transition:0.5s linear all;
+        -moz-transition:0.5s linear all;
+        -o-transition:0.5s linear all;
+        transition:0.5s linear all;
+        opacity:0;
+    }
+
+    /*
+     The ng-enter-active and ng-move-active
+     are where the transition destination properties
+     are set so that the animation knows what to
+     animate.
+    */
+    .repeated-item.ng-enter.ng-enter-active,
+    .repeated-item.ng-move.ng-move-active {
+        opacity:1;
+    }
+
+    /*
+      We're using CSS keyframe animations for when
+      the leave event is triggered for the element
+      that has the .repeated-item class
+    */
+    .repeated-item.ng-leave {
+        -webkit-animation:0.5s my_animation;
+        -moz-animation:0.5s my_animation;
+        -o-animation:0.5s my_animation;
+        animation:0.5s my_animation;
+    }
+
+    @keyframes my_animation {
+        from { opacity:1; }
+        to { opacity:0; }
+    }
+
+    /*
+      Unfortunately each browser vendor requires
+      its own definition of keyframe animation code...
+    */
+    @-webkit-keyframes my_animation {
+        from { opacity:1; }
+        to { opacity:0; }
+    }
+
+    @-moz-keyframes my_animation {
+        from { opacity:1; }
+        to { opacity:0; }
+    }
+
+    @-o-keyframes my_animation {
+        from { opacity:1; }
+        to { opacity:0; }
+    }
 </style>
 
 <script type="text/javascript">
 
-    angular.module('MyApp', ['ngAnimate']);
+    angular.module('MyApp', ['ngAnimate'])
+            .controller("Ctrl", function ($scope) {
+
+                this.friendsArray = [{
+                    name: 'Shan'
+                }, {
+                    name: 'Zeeshan'
+                }, {
+                    name: 'Alishan'
+                }, {
+                    name: 'Alisha'
+                }, {
+                    name: 'shaan'
+                }];
+
+            });
 </script>
 </body>
 </html>

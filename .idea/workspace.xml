@@ -111,11 +111,12 @@
       <file leaf-file-name="todo11.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/todos/todo11.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9119171" vertical-offset="974" max-vertical-offset="2907">
-              <caret line="78" column="5" selection-start-line="78" selection-start-column="5" selection-end-line="78" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.9119171" vertical-offset="2334" max-vertical-offset="2856">
+              <caret line="172" column="16" selection-start-line="172" selection-start-column="16" selection-end-line="172" selection-end-column="16" />
               <folding>
                 <element signature="n#style#0;n#input#0;n#label#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#3889#4223#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -810,11 +811,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/todos/todo11.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9119171" vertical-offset="974" max-vertical-offset="2907">
-          <caret line="78" column="5" selection-start-line="78" selection-start-column="5" selection-end-line="78" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.9119171" vertical-offset="2334" max-vertical-offset="2856">
+          <caret line="172" column="16" selection-start-line="172" selection-start-column="16" selection-end-line="172" selection-end-column="16" />
           <folding>
             <element signature="n#style#0;n#input#0;n#label#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#3889#4223#0" expanded="false" />
           </folding>
         </state>
       </provider>

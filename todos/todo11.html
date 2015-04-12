@@ -1,0 +1,50 @@
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body ng-app="MyApp">
+
+<div> Hey! ngAnimate <a href="https://docs.angularjs.org/guide/animations"> | Source Link</a></div>
+
+<div>
+
+    <br>
+    <hr>
+    <div ng-init="checked=true">
+        <label>
+            <input type="checkbox" ng-model="checked" style="float:left; margin-right:10px;"> Is Visible...
+        </label>
+        <div class="check-element sample-show-hide" ng-show="checked" style="clear:both;">
+            Visible...
+        </div>
+    </div>
+
+</div>
+
+<!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.6/angular.min.js"></script>-->
+<script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+<script src="../bower_components/angular-animate/angular-animate.js"></script>
+<style type="text/css">
+    .sample-show-hide {
+        padding:10px;
+        border:1px solid black;
+        background:white;
+    }
+
+    .sample-show-hide {
+        -webkit-transition:all linear 0.5s;
+        transition:all linear 0.5s;
+    }
+
+    .sample-show-hide.ng-hide {
+        opacity:0;
+    }
+</style>
+
+<script type="text/javascript">
+
+    angular.module('MyApp', ['ngAnimate']);
+</script>
+</body>
+</html>

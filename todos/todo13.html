@@ -3,19 +3,24 @@
     <meta charset="UTF-8">
     <title></title>
 </head>
-<body ng-app="MyApp" >
+<body ng-app="MyApp">
 
 <div> Hey! $location <a href="https://docs.angularjs.org/guide/$location"> | Source Link</a></div>
 
 <div ng-controller="Ctrl">
 
     <br>
-    <b>$location.path();  // get the current path</b>
-
-    {{currentPath}}
-
+    <b>$location.path(); // get the current path</b>
     <hr>
+    {{currentPath}} (If nothing displaying its on root)
 
+    <br>
+    <br>
+    <br>
+    <b>$location.path('/newValue'); // change the path</b>
+    <button ng-click="changePathFn()">Change Path</button>
+    <hr>
+    {{currentPath}}
 
 </div>
 
@@ -23,9 +28,15 @@
 <script type="text/javascript">
 
     angular.module('MyApp', []).
-            controller('Ctrl', function($scope, $location) {
-                alert($location.path());
+            controller('Ctrl', function ($scope, $location) {
+
                 $scope.currentPath = $location.path();
+
+
+                $scope.changePathFn = function () {
+                    $scope.currentPath = $location.path('/newValue_' + Date.now());
+                }
+
             });
 
 </script>

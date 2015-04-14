@@ -1,0 +1,33 @@
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body ng-app="MyApp" >
+
+<div> Hey! $location <a href="https://docs.angularjs.org/guide/$location"> | Source Link</a></div>
+
+<div ng-controller="Ctrl">
+
+    <br>
+    <b>$location.path();  // get the current path</b>
+
+    {{currentPath}}
+
+    <hr>
+
+
+</div>
+
+<script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+<script type="text/javascript">
+
+    angular.module('MyApp', []).
+            controller('Ctrl', function($scope, $location) {
+                alert($location.path());
+                $scope.currentPath = $location.path();
+            });
+
+</script>
+</body>
+</html>

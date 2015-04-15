@@ -14,12 +14,15 @@
     <hr>
 
     <div class="container" ng-controller="Ctrl">
-        <span>Remaining: {{remaining()}}</span>
+        <span ng-class="{'text-warning' : shouldWarn()}">
+        Remaining: {{remaining()}}
+        </span>
+
         <div class="row">
             <textarea ng-model="message">{{message}}</textarea>
         </div>
         <div class="row">
-            <button  ng-click="send()">Send</button>
+            <button ng-click="send()">Send</button>
             <button ng-click="clear()">Clear</button>
         </div>
     </div>
@@ -31,11 +34,15 @@
 
     angular.module('MyApp', []).
             controller('Ctrl', function ($scope) {
-                var MAX_LEN = 20;
+                var MAX_LEN = 20, WARN_THRESHOLD = 5;
                 $scope.remaining = function () {
                     return MAX_LEN - ($scope.message ? $scope.message.length : 0);
                 };
+                $scope.shouldWarn = function () {
+                    return $scope.remaining() < WARN_THRESHOLD;
+                };
             });
+
 
 </script>
 </body>

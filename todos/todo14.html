@@ -1,0 +1,37 @@
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body ng-app="MyApp">
+
+<div> Hey! Firebase <a href="#"> | Source Link</a></div>
+
+<div ng-controller="Ctrl">
+
+    <br>
+    <b>Firebase</b>
+    <hr>
+    <button ng-click="addPerson({})">Add Person</button>
+
+</div>
+
+<script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+<script type="text/javascript">
+
+    angular.module('MyApp', []).
+            controller('Ctrl', function ($scope, $firebase) {
+                var peopleRef = new Firebase("https://<my-firebase>.firebaseio.com/people");
+                $scope.people = $firebase(peopleRef);
+                $scope.newPerson = {name: 'Alex', age: 35};
+                $scope.addPerson = function () {
+                    // AngularFire $add method
+                    $scope.people.$add($scope.newPerson);
+                    //or add a new person manually
+                    peopleRef.update({name: 'Alex', age: 35});
+                }
+            });
+
+</script>
+</body>
+</html>

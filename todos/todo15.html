@@ -1,0 +1,42 @@
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body ng-app="MyApp">
+
+<div> Hey! Text Area With Limit <a href="#"> | Source Link</a></div>
+
+<div ng-controller="Ctrl">
+
+    <br>
+    <b>Text Area With Limit</b>
+    <hr>
+
+    <div class="container" ng-controller="Ctrl">
+        <span>Remaining: {{remaining()}}</span>
+        <div class="row">
+            <textarea ng-model="message">{{message}}</textarea>
+        </div>
+        <div class="row">
+            <button  ng-click="send()">Send</button>
+            <button ng-click="clear()">Clear</button>
+        </div>
+    </div>
+
+</div>
+
+<script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+<script type="text/javascript">
+
+    angular.module('MyApp', []).
+            controller('Ctrl', function ($scope) {
+                var MAX_LEN = 20;
+                $scope.remaining = function () {
+                    return MAX_LEN - ($scope.message ? $scope.message.length : 0);
+                };
+            });
+
+</script>
+</body>
+</html>

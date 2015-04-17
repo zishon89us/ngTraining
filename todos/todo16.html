@@ -20,27 +20,17 @@
 <script type="text/javascript" src="../bower_components/angular/angular.js"></script>
 <script type="text/javascript">
 
-    angular.module('MyApp', []).
-            controller('Ctrl', function ($scope) {
+    angular.module('MyApp', [])
+            .controller('Avengers', Avengers);
 
-            });
-
-    /* recommended */
-    function Avengers(dataservice) {
+    function Avengers(movieService) {
         var vm = this;
-        vm.avengers = [];
-        vm.title = 'Avengers';
-
-        activate();
-
-        ////////////
-
-        function activate() {
-            return dataservice.getAvengers().then(function (data) {
-                vm.avengers = data;
-                return vm.avengers;
-            });
-        }
+        // unresolved
+        vm.movies;
+        // resolved asynchronously
+        movieService.getMovies().then(function (response) {
+            vm.movies = response.movies;
+        });
     }
 
 </script>

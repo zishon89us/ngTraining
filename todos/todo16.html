@@ -1,0 +1,48 @@
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body ng-app="MyApp">
+
+<div> Hey! Resolve Promises <a
+        href="http://bguiz.github.io/js-standards/angularjs/resolving-promises-for-a-controller/"> | Source Link</a>
+</div>
+
+<div ng-controller="Ctrl">
+
+    <br>
+    <b></b>
+    <hr>
+
+</div>
+
+<script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+<script type="text/javascript">
+
+    angular.module('MyApp', []).
+            controller('Ctrl', function ($scope) {
+
+            });
+
+    /* recommended */
+    function Avengers(dataservice) {
+        var vm = this;
+        vm.avengers = [];
+        vm.title = 'Avengers';
+
+        activate();
+
+        ////////////
+
+        function activate() {
+            return dataservice.getAvengers().then(function (data) {
+                vm.avengers = data;
+                return vm.avengers;
+            });
+        }
+    }
+
+</script>
+</body>
+</html>

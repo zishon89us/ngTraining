@@ -20,6 +20,9 @@
 <script type="text/javascript" src="../bower_components/angular/angular.js"></script>
 <script type="text/javascript">
 
+    /* even better */
+
+    // route-config.js
     angular.module('MyApp', [])
             .config(config);
 
@@ -30,15 +33,17 @@
                     controller: 'Avengers',
                     controllerAs: 'vm',
                     resolve: {
-                        moviesPrepService: function (movieService) {
-                            return movieService.getMovies();
-                        }
+                        moviesPrepService: moviesPrepService
                     }
                 });
     }
 
+    function moviePrepService(movieService) {
+        return movieService.getMovies();
+    }
+
     // avengers.js
-    angular.module('MyApp')
+     angular.module('MyApp', [])
             .controller('Avengers', Avengers);
 
     Avengers.$inject = ['moviesPrepService'];

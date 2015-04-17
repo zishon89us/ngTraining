@@ -21,16 +21,30 @@
 <script type="text/javascript">
 
     angular.module('MyApp', [])
+            .config(config);
+
+    function config($routeProvider) {
+        $routeProvider
+                .when('/avengers', {
+                    templateUrl: 'avengers.html',
+                    controller: 'Avengers',
+                    controllerAs: 'vm',
+                    resolve: {
+                        moviesPrepService: function (movieService) {
+                            return movieService.getMovies();
+                        }
+                    }
+                });
+    }
+
+    // avengers.js
+    angular.module('MyApp')
             .controller('Avengers', Avengers);
 
-    function Avengers(movieService) {
+    Avengers.$inject = ['moviesPrepService'];
+    function Avengers(moviesPrepService) {
         var vm = this;
-        // unresolved
-        vm.movies;
-        // resolved asynchronously
-        movieService.getMovies().then(function (response) {
-            vm.movies = response.movies;
-        });
+        vm.movies = moviesPrepService.movies;
     }
 
 </script>

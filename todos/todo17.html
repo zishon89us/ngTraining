@@ -1,0 +1,42 @@
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body ng-app="MyApp">
+
+<div> Hey! Minification and Annotation <a
+        href="http://bguiz.github.io/js-standards/angularjs/minification-and-annotation/"> | Source Link</a>
+</div>
+
+<div ng-controller="Ctrl">
+
+    <br>
+    <b>ng-annotate</b>
+    <hr>
+
+</div>
+
+<script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+<script type="text/javascript">
+
+    angular.module('MyApp', [])
+            .controller('Avengers', Avengers);
+
+
+    /* @ngInject */
+    function Avengers(storageService, avengerService) {
+        var vm = this;
+        vm.heroSearch = '';
+        vm.storeHero = storeHero;
+
+
+        function storeHero() {
+            var hero = avengerService.find(vm.heroSearch);
+            storageService.save(hero.name, hero);
+        }
+    }
+
+</script>
+</body>
+</html>

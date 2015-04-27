@@ -1,0 +1,47 @@
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body ng-app="MyApp">
+
+<div> Hey! Exception Handling <a
+        href="http://bguiz.github.io/js-standards/angularjs/exception-handling/"> | Source Link</a>
+</div>
+
+<div ng-controller="Ctrl">
+
+    <br>
+    <b>Exception Handling</b>
+    <hr>
+
+</div>
+
+<script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+<script type="text/javascript">
+    /* recommended */
+    angular
+            .module('blocks.exception')
+            .factory('exception', exception);
+
+
+    exception.$inject = ['logger'];
+
+
+    function exception(logger) {
+        var service = {
+            catcher: catcher
+        };
+        return service;
+
+
+        function catcher(message) {
+            return function(reason) {
+                logger.error(message, reason);
+            };
+        }
+    }
+
+</script>
+</body>
+</html>

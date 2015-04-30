@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="907fc937-8e10-4482-bebd-f381edcd763a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/todos/todo18.html" afterPath="$PROJECT_DIR$/todos/todo18.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ngTraining.git.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -124,10 +123,11 @@
       <file leaf-file-name="todo18.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/todos/todo18.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9390681" vertical-offset="343" max-vertical-offset="1037">
-              <caret line="63" column="5" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.60394263" vertical-offset="377" max-vertical-offset="1122">
+              <caret line="54" column="23" selection-start-line="54" selection-start-column="23" selection-end-line="54" selection-end-column="23" />
               <folding>
                 <element signature="e#637#880#0" expanded="false" />
+                <element signature="e#1375#2176#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -812,10 +812,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/todos/todo18.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9390681" vertical-offset="343" max-vertical-offset="1037">
-          <caret line="63" column="5" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.60394263" vertical-offset="377" max-vertical-offset="1122">
+          <caret line="54" column="23" selection-start-line="54" selection-start-column="23" selection-end-line="54" selection-end-column="23" />
           <folding>
             <element signature="e#637#880#0" expanded="false" />
+            <element signature="e#1375#2176#0" expanded="false" />
           </folding>
         </state>
       </provider>
